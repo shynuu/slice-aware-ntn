@@ -1,2 +1,3 @@
-# slice-aware-ntn
-Slice Aware Non Terrestrial Networks
+# Slice Aware Non Terrestrial Networks
+
+Clean repository to come in the end of the week
