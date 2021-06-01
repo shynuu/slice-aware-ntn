@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.box = "ubuntu/focal64";
+
+    config.vm.define :sa_ntn do |sa_ntn|
+        sa_ntn.vm.host_name = "sa-ntn"
+        sa_ntn.vm.provider :virtualbox do |vb|
+            vb.memory = 16392
+            vb.cpus = 8
+            # vb.gui = true
+        end
+        sa_ntn.disksize.size = '50GB'
+        sa_ntn.vm.provision "shell", path: "script/pre-config.sh"
+        sa_ntn.vm.provision :reload
+        sa_ntn.vm.provision "shell", path: "script/post-config.sh"
+        sa_ntn.vm.provision :reload
+        sa_ntn.vm.synced_folder "./", "/vagrant", disabled: false
+    end
+
+end

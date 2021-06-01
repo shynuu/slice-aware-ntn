@@ -1,0 +1,54 @@
+info:
+  version: 1.0.0
+  description: NTN initial local configuration
+
+configuration:
+  QofName: QOF # the name of this QOF
+  sbi: # Service-based interface information
+    scheme: http # the protocol for sbi (http or https)
+    registerIPv4: 127.0.0.1 # IP used to register to NRF
+    bindingIPv4: 127.0.0.1 # IP used to bind the service
+    port: 8090 # Port used to bind the service
+    tls: # the local path of TLS key
+      key: free5gc/support/TLS/ntn.key # QOF TLS Certificate
+      pem: free5gc/support/TLS/ntn.pem # QOF TLS Private key
+  nrfUri: http://127.0.0.10:8000 # a valid URI of NRF
+  qos: # QoS translation table, associates a 5QI with an IP DSCP field
+    9: 0x12 # e.g: 5QI value 9 corresponds to the DSCP field 0x12
+    3: 0x11 # e.g: 5QI value 9 corresponds to the DSCP field 0x12
+  slice: # Slice translation table based on S-NSSAI
+    - sNssai: # S-NSSAI (Single Network Slice Selection Assistance Information)
+        sst: 1 # Slice/Service Type (uinteger, range: 0~255)
+        sd: 010203 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+      ran: 10.0.10.1 # 5G RAN endpoint for this slice
+      cn: 10.0.5.1 # 5G CN UP endpoint for this slice
+      id: 1 # ID of slice on the NTN side
+      amf: 10.0.2.1 # 5G CN CN endpoint for this slice
+      default: true # define if this the default slice for the 5G CP
+  ntnUri: http://127.0.0.1:9090
+
+# the kind of log output
+# debugLevel: how detailed to output, value: trace, debug, info, warn, error, fatal, panic
+# ReportCaller: enable the caller report or not, value: true or false
+logger:
+  QOF:
+    debugLevel: info
+    ReportCaller: false
+  NAS:
+    debugLevel: info
+    ReportCaller: false
+  NGAP:
+    debugLevel: info
+    ReportCaller: false
+  Aper:
+    debugLevel: info
+    ReportCaller: false
+  PathUtil:
+    debugLevel: info
+    ReportCaller: false
+  OpenApi:
+    debugLevel: info
+    ReportCaller: false
+  PFCP:
+    debugLevel: info
+    ReportCaller: false
