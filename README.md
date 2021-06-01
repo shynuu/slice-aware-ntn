@@ -6,4 +6,4 @@ This repository allows you to launch a testbed to test our integration method of
 
 ## Docker repository
 
-All images are pre-built and are available on docker hub : https://hub.docker.com/repository/docker/shynuu/sa-ntn
+All images are pre-built and are available on docker hub : https://hub.docker.com/r/shynuu/sa-ntn
