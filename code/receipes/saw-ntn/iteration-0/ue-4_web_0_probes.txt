@@ -1,0 +1,489 @@
+------------------------------------------------------------
+Client connecting to 10.0.100.12, UDP port 8080 with pid 58 (1 flows)
+Sending 1400 byte datagrams, IPG target: 3560.38 us (kalman adjust)
+UDP buffer size: 212992 Byte (default)
+------------------------------------------------------------
+[  1] local 60.60.0.3%uesimtun0 port 40302 connected with 10.0.100.12 port 8080 (reverse) (trip-times) (sock=3) on 2021-05-25 18:46:22 (UTC)
+[ ID] Interval        Transfer     Bandwidth        Jitter   Lost/Total  Latency avg/min/max/stdev PPS  Rx/inP  NetPwr
+[ *1] 0.00-1.00 sec  386400 Bytes  3091200 bits/sec   3.178 ms 0/276 (0%) 23.319/13.452/31.062/3.321 ms 276 pps 276/6(1) pkts 17
+[ *1] 0.00-1.00 sec  69 datagrams received out-of-order
+[ *1] 1.00-2.00 sec  393400 Bytes  3147200 bits/sec   2.967 ms 0/281 (0%) 23.486/15.568/33.924/3.000 ms 281 pps 281/7(1) pkts 17
+[ *1] 1.00-2.00 sec  58 datagrams received out-of-order
+[ *1] 2.00-3.00 sec  393400 Bytes  3147200 bits/sec   4.203 ms 0/281 (0%) 23.360/12.971/31.081/3.206 ms 281 pps 281/7(1) pkts 17
+[ *1] 2.00-3.00 sec  65 datagrams received out-of-order
+[ *1] 3.00-4.00 sec  392000 Bytes  3136000 bits/sec   3.489 ms 0/280 (0%) 22.943/15.522/31.294/3.036 ms 282 pps 280/6(1) pkts 17
+[ *1] 3.00-4.00 sec  66 datagrams received out-of-order
+[ *1] 4.00-5.00 sec  393400 Bytes  3147200 bits/sec   4.643 ms 0/281 (0%) 23.216/13.856/30.902/3.255 ms 279 pps 281/6(1) pkts 17
+[ *1] 4.00-5.00 sec  72 datagrams received out-of-order
+[ *1] 5.00-6.00 sec  393400 Bytes  3147200 bits/sec   3.135 ms 0/281 (0%) 23.378/14.824/31.361/2.993 ms 281 pps 281/7(1) pkts 17
+[ *1] 5.00-6.00 sec  65 datagrams received out-of-order
+[ *1] 6.00-7.00 sec  394800 Bytes  3158400 bits/sec   3.280 ms 0/282 (0%) 23.396/15.219/31.374/2.801 ms 282 pps 282/7(1) pkts 17
+[ *1] 6.00-7.00 sec  57 datagrams received out-of-order
+[ *1] 7.00-8.00 sec  390600 Bytes  3124800 bits/sec   3.533 ms 1/280 (0.36%) 23.513/15.957/32.160/3.090 ms 279 pps 279/7(1) pkts 17
+[ *1] 7.00-8.00 sec  66 datagrams received out-of-order
+[ *1] 8.00-9.00 sec  393400 Bytes  3147200 bits/sec   3.435 ms 0/280 (0%) 23.581/16.057/31.398/2.819 ms 281 pps 281/7(1) pkts 17
+[ *1] 8.00-9.00 sec  56 datagrams received out-of-order
+[ *1] 9.00-10.00 sec  393400 Bytes  3147200 bits/sec   2.677 ms 0/281 (0%) 23.280/16.093/30.883/3.019 ms 283 pps 281/7(1) pkts 17
+[ *1] 9.00-10.00 sec  62 datagrams received out-of-order
+[ *1] 10.00-11.00 sec  394800 Bytes  3158400 bits/sec   3.372 ms 0/282 (0%) 23.574/15.121/33.289/3.174 ms 281 pps 282/7(1) pkts 17
+[ *1] 10.00-11.00 sec  71 datagrams received out-of-order
+[ *1] 11.00-12.00 sec  390600 Bytes  3124800 bits/sec   4.926 ms 0/279 (0%) 23.166/14.175/32.530/3.025 ms 281 pps 279/7(1) pkts 17
+[ *1] 11.00-12.00 sec  57 datagrams received out-of-order
+[ *1] 12.00-13.00 sec  394800 Bytes  3158400 bits/sec   3.386 ms 2/284 (0.7%) 23.339/15.982/31.383/2.697 ms 280 pps 282/7(1) pkts 17
+[ *1] 12.00-13.00 sec  53 datagrams received out-of-order
+[ *1] 13.00-14.00 sec  393400 Bytes  3147200 bits/sec   3.698 ms 0/279 (0%) 23.513/14.868/31.911/3.142 ms 283 pps 281/7(1) pkts 17
+[ *1] 13.00-14.00 sec  63 datagrams received out-of-order
+[ *1] 14.00-15.00 sec  394800 Bytes  3158400 bits/sec   4.309 ms 0/282 (0%) 23.411/15.870/30.649/3.027 ms 280 pps 282/7(1) pkts 17
+[ *1] 14.00-15.00 sec  66 datagrams received out-of-order
+[ *1] 15.00-16.00 sec  392000 Bytes  3136000 bits/sec   3.578 ms 0/280 (0%) 23.138/15.338/30.588/3.016 ms 281 pps 280/7(1) pkts 17
+[ *1] 15.00-16.00 sec  60 datagrams received out-of-order
+[ *1] 16.00-17.00 sec  393400 Bytes  3147200 bits/sec   2.346 ms 0/281 (0%) 23.184/16.028/31.367/2.985 ms 280 pps 281/6(1) pkts 17
+[ *1] 16.00-17.00 sec  58 datagrams received out-of-order
+[ *1] 17.00-18.00 sec  392000 Bytes  3136000 bits/sec   3.193 ms 0/280 (0%) 23.346/14.840/31.216/2.969 ms 280 pps 280/7(1) pkts 17
+[ *1] 17.00-18.00 sec  67 datagrams received out-of-order
+[ *1] 18.00-19.00 sec  393400 Bytes  3147200 bits/sec   3.436 ms 0/281 (0%) 23.237/14.030/32.365/2.882 ms 282 pps 281/7(1) pkts 17
+[ *1] 18.00-19.00 sec  62 datagrams received out-of-order
+[ *1] 19.00-20.00 sec  393400 Bytes  3147200 bits/sec   3.641 ms 0/281 (0%) 23.328/15.388/31.474/3.280 ms 280 pps 281/7(1) pkts 17
+[ *1] 19.00-20.00 sec  70 datagrams received out-of-order
+[ *1] 20.00-21.00 sec  392000 Bytes  3136000 bits/sec   3.477 ms 1/281 (0.36%) 23.503/15.633/33.897/2.999 ms 281 pps 280/7(1) pkts 17
+[ *1] 20.00-21.00 sec  73 datagrams received out-of-order
+[ *1] 21.00-22.00 sec  394800 Bytes  3158400 bits/sec   3.637 ms 0/281 (0%) 23.372/14.259/31.074/2.950 ms 282 pps 282/7(1) pkts 17
+[ *1] 21.00-22.00 sec  65 datagrams received out-of-order
+[ *1] 22.00-23.00 sec  393400 Bytes  3147200 bits/sec   3.081 ms 1/282 (0.35%) 23.662/15.392/33.915/2.975 ms 280 pps 281/7(1) pkts 17
+[ *1] 22.00-23.00 sec  62 datagrams received out-of-order
+[ *1] 23.00-24.00 sec  393400 Bytes  3147200 bits/sec   3.987 ms 0/281 (0%) 23.370/14.156/31.448/2.829 ms 281 pps 281/7(1) pkts 17
+[ *1] 23.00-24.00 sec  59 datagrams received out-of-order
+[ *1] 24.00-25.00 sec  393400 Bytes  3147200 bits/sec   3.088 ms 0/280 (0%) 23.426/15.930/33.936/3.033 ms 281 pps 281/7(1) pkts 17
+[ *1] 24.00-25.00 sec  60 datagrams received out-of-order
+[ *1] 25.00-26.00 sec  393400 Bytes  3147200 bits/sec   3.500 ms 0/281 (0%) 23.166/11.410/31.157/3.008 ms 281 pps 281/7(1) pkts 17
+[ *1] 25.00-26.00 sec  68 datagrams received out-of-order
+[ *1] 26.00-27.00 sec  392000 Bytes  3136000 bits/sec   4.435 ms 2/282 (0.71%) 23.548/16.063/31.453/3.022 ms 280 pps 280/7(1) pkts 17
+[ *1] 26.00-27.00 sec  68 datagrams received out-of-order
+[ *1] 27.00-28.00 sec  393400 Bytes  3147200 bits/sec   4.054 ms 0/279 (0%) 23.591/14.362/32.345/2.988 ms 282 pps 281/7(1) pkts 17
+[ *1] 27.00-28.00 sec  60 datagrams received out-of-order
+[ *1] 28.00-29.00 sec  393400 Bytes  3147200 bits/sec   3.987 ms 0/281 (0%) 23.246/15.669/31.234/3.115 ms 281 pps 281/7(1) pkts 17
+[ *1] 28.00-29.00 sec  64 datagrams received out-of-order
+[ *1] 29.00-30.00 sec  392000 Bytes  3136000 bits/sec   3.536 ms 1/281 (0.36%) 22.985/14.974/31.299/3.044 ms 279 pps 280/6(1) pkts 17
+[ *1] 29.00-30.00 sec  61 datagrams received out-of-order
+[ *1] 30.00-31.00 sec  396200 Bytes  3169600 bits/sec   4.193 ms 0/282 (0%) 23.168/13.499/30.869/3.107 ms 283 pps 283/7(1) pkts 17
+[ *1] 30.00-31.00 sec  71 datagrams received out-of-order
+[ *1] 31.00-32.00 sec  392000 Bytes  3136000 bits/sec   3.936 ms 0/280 (0%) 23.456/15.614/32.460/2.967 ms 281 pps 280/7(1) pkts 17
+[ *1] 31.00-32.00 sec  63 datagrams received out-of-order
+[ *1] 32.00-33.00 sec  392000 Bytes  3136000 bits/sec   3.709 ms 0/280 (0%) 23.387/13.019/29.852/2.730 ms 281 pps 280/7(1) pkts 17
+[ *1] 32.00-33.00 sec  50 datagrams received out-of-order
+[ *1] 33.00-34.00 sec  394800 Bytes  3158400 bits/sec   4.264 ms 0/282 (0%) 23.506/16.228/32.168/3.069 ms 281 pps 282/7(1) pkts 17
+[ *1] 33.00-34.00 sec  65 datagrams received out-of-order
+[ *1] 34.00-35.00 sec  392000 Bytes  3136000 bits/sec   3.672 ms 1/281 (0.36%) 23.246/11.459/32.356/3.067 ms 281 pps 280/7(1) pkts 17
+[ *1] 34.00-35.00 sec  63 datagrams received out-of-order
+[ *1] 35.00-36.00 sec  393400 Bytes  3147200 bits/sec   3.158 ms 0/280 (0%) 23.349/15.532/30.161/2.740 ms 280 pps 281/7(1) pkts 17
+[ *1] 35.00-36.00 sec  59 datagrams received out-of-order
+[ *1] 36.00-37.00 sec  393400 Bytes  3147200 bits/sec   3.078 ms 1/282 (0.35%) 23.510/14.337/30.303/2.913 ms 280 pps 281/7(1) pkts 17
+[ *1] 36.00-37.00 sec  61 datagrams received out-of-order
+[ *1] 37.00-38.00 sec  392000 Bytes  3136000 bits/sec   3.125 ms 0/279 (0%) 23.281/15.015/31.064/3.052 ms 281 pps 280/7(1) pkts 17
+[ *1] 37.00-38.00 sec  66 datagrams received out-of-order
+[ *1] 38.00-39.00 sec  393400 Bytes  3147200 bits/sec   4.004 ms 0/281 (0%) 23.246/11.308/31.923/3.291 ms 280 pps 281/7(1) pkts 17
+[ *1] 38.00-39.00 sec  69 datagrams received out-of-order
+[ *1] 39.00-40.00 sec  393400 Bytes  3147200 bits/sec   3.124 ms 0/281 (0%) 23.138/12.878/30.370/2.820 ms 281 pps 281/7(1) pkts 17
+[ *1] 39.00-40.00 sec  62 datagrams received out-of-order
+[ *1] 40.00-41.00 sec  393400 Bytes  3147200 bits/sec   4.004 ms 0/281 (0%) 23.458/15.354/33.332/2.980 ms 281 pps 281/7(1) pkts 17
+[ *1] 40.00-41.00 sec  59 datagrams received out-of-order
+[ *1] 41.00-42.00 sec  393400 Bytes  3147200 bits/sec   3.035 ms 0/281 (0%) 23.377/13.684/32.938/2.854 ms 280 pps 281/7(1) pkts 17
+[ *1] 41.00-42.00 sec  61 datagrams received out-of-order
+[ *1] 42.00-43.00 sec  393400 Bytes  3147200 bits/sec   4.603 ms 0/281 (0%) 23.303/11.342/32.302/3.175 ms 281 pps 281/7(1) pkts 17
+[ *1] 42.00-43.00 sec  61 datagrams received out-of-order
+[ *1] 43.00-44.00 sec  393400 Bytes  3147200 bits/sec   3.093 ms 1/282 (0.35%) 23.450/15.049/32.607/3.119 ms 282 pps 281/7(1) pkts 17
+[ *1] 43.00-44.00 sec  73 datagrams received out-of-order
+[ *1] 44.00-45.00 sec  393400 Bytes  3147200 bits/sec   3.283 ms 0/281 (0%) 23.477/14.922/32.415/2.961 ms 280 pps 281/7(1) pkts 17
+[ *1] 44.00-45.00 sec  64 datagrams received out-of-order
+[ *1] 45.00-46.00 sec  393400 Bytes  3147200 bits/sec   4.129 ms 0/280 (0%) 23.129/14.182/31.585/2.876 ms 281 pps 281/6(1) pkts 17
+[ *1] 45.00-46.00 sec  55 datagrams received out-of-order
+[ *1] 46.00-47.00 sec  393400 Bytes  3147200 bits/sec   3.735 ms 0/281 (0%) 23.403/15.792/32.810/2.959 ms 282 pps 281/7(1) pkts 17
+[ *1] 46.00-47.00 sec  59 datagrams received out-of-order
+[ *1] 47.00-48.00 sec  392000 Bytes  3136000 bits/sec   3.232 ms 0/280 (0%) 23.547/14.960/30.398/2.993 ms 280 pps 280/7(1) pkts 17
+[ *1] 47.00-48.00 sec  72 datagrams received out-of-order
+[ *1] 48.00-49.00 sec  394800 Bytes  3158400 bits/sec   3.271 ms 1/283 (0.35%) 23.430/14.724/31.362/3.038 ms 281 pps 282/7(1) pkts 17
+[ *1] 48.00-49.00 sec  67 datagrams received out-of-order
+[ *1] 49.00-50.00 sec  392000 Bytes  3136000 bits/sec   3.758 ms 0/279 (0%) 23.536/13.488/31.488/2.934 ms 280 pps 280/7(1) pkts 17
+[ *1] 49.00-50.00 sec  64 datagrams received out-of-order
+[ *1] 50.00-51.00 sec  392000 Bytes  3136000 bits/sec   3.297 ms 0/280 (0%) 23.350/13.543/32.659/3.174 ms 281 pps 280/7(1) pkts 17
+[ *1] 50.00-51.00 sec  74 datagrams received out-of-order
+[ *1] 51.00-52.00 sec  393400 Bytes  3147200 bits/sec   3.103 ms 0/281 (0%) 23.458/15.608/30.895/2.970 ms 281 pps 281/7(1) pkts 17
+[ *1] 51.00-52.00 sec  63 datagrams received out-of-order
+[ *1] 52.00-53.00 sec  394800 Bytes  3158400 bits/sec   2.304 ms 1/283 (0.35%) 23.326/15.448/33.383/2.961 ms 281 pps 282/7(1) pkts 17
+[ *1] 52.00-53.00 sec  54 datagrams received out-of-order
+[ *1] 53.00-54.00 sec  392000 Bytes  3136000 bits/sec   2.958 ms 0/279 (0%) 23.555/15.885/31.897/2.987 ms 281 pps 280/7(1) pkts 17
+[ *1] 53.00-54.00 sec  60 datagrams received out-of-order
+[ *1] 54.00-55.00 sec  394800 Bytes  3158400 bits/sec   3.393 ms 0/282 (0%) 23.572/15.153/32.434/2.819 ms 281 pps 282/7(1) pkts 17
+[ *1] 54.00-55.00 sec  57 datagrams received out-of-order
+[ *1] 55.00-56.00 sec  390600 Bytes  3124800 bits/sec   3.929 ms 0/279 (0%) 23.369/13.811/32.413/2.987 ms 279 pps 279/7(1) pkts 17
+[ *1] 55.00-56.00 sec  54 datagrams received out-of-order
+[ *1] 56.00-57.00 sec  396200 Bytes  3169600 bits/sec   2.242 ms 0/283 (0%) 23.374/16.843/31.948/2.961 ms 282 pps 283/7(1) pkts 17
+[ *1] 56.00-57.00 sec  55 datagrams received out-of-order
+[ *1] 57.00-58.00 sec  393400 Bytes  3147200 bits/sec   3.044 ms 0/281 (0%) 23.005/13.557/32.213/3.101 ms 281 pps 281/6(1) pkts 17
+[ *1] 57.00-58.00 sec  60 datagrams received out-of-order
+[ *1] 58.00-59.00 sec  392000 Bytes  3136000 bits/sec   3.909 ms 0/280 (0%) 23.438/13.802/32.669/3.036 ms 282 pps 280/7(1) pkts 17
+[ *1] 58.00-59.00 sec  59 datagrams received out-of-order
+[ *1] 59.00-60.00 sec  393400 Bytes  3147200 bits/sec   4.222 ms 0/281 (0%) 23.502/14.744/31.582/3.015 ms 280 pps 281/7(1) pkts 17
+[ *1] 59.00-60.00 sec  60 datagrams received out-of-order
+[ *1] 60.00-61.00 sec  393400 Bytes  3147200 bits/sec   3.324 ms 0/281 (0%) 23.344/15.734/29.782/2.835 ms 281 pps 281/7(1) pkts 17
+[ *1] 60.00-61.00 sec  62 datagrams received out-of-order
+[ *1] 61.00-62.00 sec  394800 Bytes  3158400 bits/sec   3.629 ms 0/282 (0%) 23.414/15.916/34.019/3.035 ms 281 pps 282/7(1) pkts 17
+[ *1] 61.00-62.00 sec  70 datagrams received out-of-order
+[ *1] 62.00-63.00 sec  392000 Bytes  3136000 bits/sec   4.606 ms 0/280 (0%) 23.296/11.328/31.438/3.035 ms 280 pps 280/7(1) pkts 17
+[ *1] 62.00-63.00 sec  63 datagrams received out-of-order
+[ *1] 63.00-64.00 sec  393400 Bytes  3147200 bits/sec   3.680 ms 0/281 (0%) 23.372/16.750/31.194/2.970 ms 282 pps 281/7(1) pkts 17
+[ *1] 63.00-64.00 sec  60 datagrams received out-of-order
+[ *1] 64.00-65.00 sec  393400 Bytes  3147200 bits/sec   3.876 ms 0/281 (0%) 23.400/16.165/31.541/2.889 ms 280 pps 281/7(1) pkts 17
+[ *1] 64.00-65.00 sec  60 datagrams received out-of-order
+[ *1] 65.00-66.00 sec  394800 Bytes  3158400 bits/sec   3.574 ms 0/282 (0%) 23.216/15.254/33.229/2.998 ms 282 pps 282/7(1) pkts 17
+[ *1] 65.00-66.00 sec  60 datagrams received out-of-order
+[ *1] 66.00-67.00 sec  389200 Bytes  3113600 bits/sec   3.261 ms 0/278 (0%) 23.464/16.058/32.233/2.954 ms 279 pps 278/7(1) pkts 17
+[ *1] 66.00-67.00 sec  61 datagrams received out-of-order
+[ *1] 67.00-68.00 sec  394800 Bytes  3158400 bits/sec   3.878 ms 0/282 (0%) 23.161/14.254/29.773/3.084 ms 281 pps 282/7(1) pkts 17
+[ *1] 67.00-68.00 sec  64 datagrams received out-of-order
+[ *1] 68.00-69.00 sec  393400 Bytes  3147200 bits/sec   4.118 ms 0/281 (0%) 23.443/15.623/30.407/2.791 ms 281 pps 281/7(1) pkts 17
+[ *1] 68.00-69.00 sec  58 datagrams received out-of-order
+[ *1] 69.00-70.00 sec  393400 Bytes  3147200 bits/sec   3.996 ms 0/281 (0%) 23.398/16.909/31.945/2.894 ms 281 pps 281/7(1) pkts 17
+[ *1] 69.00-70.00 sec  67 datagrams received out-of-order
+[ *1] 70.00-71.00 sec  392000 Bytes  3136000 bits/sec   2.946 ms 0/280 (0%) 23.575/14.751/32.321/2.946 ms 280 pps 280/7(1) pkts 17
+[ *1] 70.00-71.00 sec  56 datagrams received out-of-order
+[ *1] 71.00-72.00 sec  393400 Bytes  3147200 bits/sec   3.843 ms 0/281 (0%) 23.548/15.908/31.505/3.046 ms 281 pps 281/7(1) pkts 17
+[ *1] 71.00-72.00 sec  62 datagrams received out-of-order
+[ *1] 72.00-73.00 sec  393400 Bytes  3147200 bits/sec   3.144 ms 0/281 (0%) 23.366/16.802/32.144/2.879 ms 281 pps 281/7(1) pkts 17
+[ *1] 72.00-73.00 sec  65 datagrams received out-of-order
+[ *1] 73.00-74.00 sec  393400 Bytes  3147200 bits/sec   2.252 ms 0/281 (0%) 23.412/16.215/31.667/2.791 ms 281 pps 281/7(1) pkts 17
+[ *1] 73.00-74.00 sec  56 datagrams received out-of-order
+[ *1] 74.00-75.00 sec  393400 Bytes  3147200 bits/sec   3.349 ms 0/281 (0%) 23.428/11.272/32.927/3.034 ms 281 pps 281/7(1) pkts 17
+[ *1] 74.00-75.00 sec  63 datagrams received out-of-order
+[ *1] 75.00-76.00 sec  393400 Bytes  3147200 bits/sec   3.319 ms 1/282 (0.35%) 23.115/15.678/31.257/2.967 ms 280 pps 281/6(1) pkts 17
+[ *1] 75.00-76.00 sec  67 datagrams received out-of-order
+[ *1] 76.00-77.00 sec  394800 Bytes  3158400 bits/sec   2.721 ms 0/281 (0%) 23.288/15.543/31.707/2.995 ms 282 pps 282/7(1) pkts 17
+[ *1] 76.00-77.00 sec  60 datagrams received out-of-order
+[ *1] 77.00-78.00 sec  390600 Bytes  3124800 bits/sec   4.992 ms 0/279 (0%) 23.574/16.056/34.063/2.987 ms 280 pps 279/7(1) pkts 17
+[ *1] 77.00-78.00 sec  58 datagrams received out-of-order
+[ *1] 78.00-79.00 sec  393400 Bytes  3147200 bits/sec   3.619 ms 0/281 (0%) 23.471/15.147/31.399/2.852 ms 283 pps 281/7(1) pkts 17
+[ *1] 78.00-79.00 sec  53 datagrams received out-of-order
+[ *1] 79.00-80.00 sec  394800 Bytes  3158400 bits/sec   4.106 ms 0/282 (0%) 23.341/12.977/31.763/2.927 ms 281 pps 282/7(1) pkts 17
+[ *1] 79.00-80.00 sec  67 datagrams received out-of-order
+[ *1] 80.00-81.00 sec  392000 Bytes  3136000 bits/sec   2.631 ms 0/280 (0%) 23.291/13.549/32.675/2.855 ms 280 pps 280/7(1) pkts 17
+[ *1] 80.00-81.00 sec  55 datagrams received out-of-order
+[ *1] 81.00-82.00 sec  393400 Bytes  3147200 bits/sec   3.165 ms 0/281 (0%) 23.195/12.982/29.895/2.987 ms 281 pps 281/7(1) pkts 17
+[ *1] 81.00-82.00 sec  61 datagrams received out-of-order
+[ *1] 82.00-83.00 sec  390600 Bytes  3124800 bits/sec   3.924 ms 0/279 (0%) 23.462/14.429/30.872/2.831 ms 281 pps 279/7(1) pkts 17
+[ *1] 82.00-83.00 sec  59 datagrams received out-of-order
+[ *1] 83.00-84.00 sec  397600 Bytes  3180800 bits/sec   2.282 ms 0/284 (0%) 23.318/13.874/32.975/2.905 ms 282 pps 284/7(1) pkts 17
+[ *1] 83.00-84.00 sec  61 datagrams received out-of-order
+[ *1] 84.00-85.00 sec  392000 Bytes  3136000 bits/sec   3.285 ms 0/280 (0%) 23.676/15.327/31.733/3.174 ms 280 pps 280/7(1) pkts 17
+[ *1] 84.00-85.00 sec  69 datagrams received out-of-order
+[ *1] 85.00-86.00 sec  393400 Bytes  3147200 bits/sec   4.534 ms 0/281 (0%) 23.580/13.399/33.060/3.167 ms 281 pps 281/7(1) pkts 17
+[ *1] 85.00-86.00 sec  68 datagrams received out-of-order
+[ *1] 86.00-87.00 sec  392000 Bytes  3136000 bits/sec   3.672 ms 0/280 (0%) 23.144/13.457/31.124/2.949 ms 279 pps 280/6(1) pkts 17
+[ *1] 86.00-87.00 sec  57 datagrams received out-of-order
+[ *1] 87.00-88.00 sec  394800 Bytes  3158400 bits/sec   4.894 ms 0/282 (0%) 23.194/14.744/32.072/3.062 ms 282 pps 282/7(1) pkts 17
+[ *1] 87.00-88.00 sec  67 datagrams received out-of-order
+[ *1] 88.00-89.00 sec  392000 Bytes  3136000 bits/sec   3.609 ms 0/280 (0%) 23.360/16.484/30.871/2.746 ms 281 pps 280/7(1) pkts 17
+[ *1] 88.00-89.00 sec  50 datagrams received out-of-order
+[ *1] 89.00-90.00 sec  393400 Bytes  3147200 bits/sec   2.314 ms 0/281 (0%) 23.277/14.269/31.335/2.901 ms 280 pps 281/7(1) pkts 17
+[ *1] 89.00-90.00 sec  60 datagrams received out-of-order
+[ *1] 90.00-91.00 sec  394800 Bytes  3158400 bits/sec   2.479 ms 0/282 (0%) 23.543/15.316/33.270/2.758 ms 282 pps 282/7(1) pkts 17
+[ *1] 90.00-91.00 sec  57 datagrams received out-of-order
+[ *1] 91.00-92.00 sec  392000 Bytes  3136000 bits/sec   3.869 ms 0/280 (0%) 23.173/13.794/30.249/3.000 ms 281 pps 280/7(1) pkts 17
+[ *1] 91.00-92.00 sec  63 datagrams received out-of-order
+[ *1] 92.00-93.00 sec  393400 Bytes  3147200 bits/sec   2.831 ms 0/281 (0%) 23.190/11.344/29.587/2.754 ms 280 pps 281/6(1) pkts 17
+[ *1] 92.00-93.00 sec  61 datagrams received out-of-order
+[ *1] 93.00-94.00 sec  393400 Bytes  3147200 bits/sec   3.596 ms 0/281 (0%) 23.377/15.303/33.843/2.980 ms 281 pps 281/7(1) pkts 17
+[ *1] 93.00-94.00 sec  51 datagrams received out-of-order
+[ *1] 94.00-95.00 sec  392000 Bytes  3136000 bits/sec   3.399 ms 1/281 (0.36%) 23.059/15.108/29.782/2.970 ms 280 pps 280/6(1) pkts 17
+[ *1] 94.00-95.00 sec  62 datagrams received out-of-order
+[ *1] 95.00-96.00 sec  393400 Bytes  3147200 bits/sec   4.796 ms 0/280 (0%) 23.105/11.445/32.471/3.152 ms 281 pps 281/6(1) pkts 17
+[ *1] 95.00-96.00 sec  69 datagrams received out-of-order
+[ *1] 96.00-97.00 sec  392000 Bytes  3136000 bits/sec   3.134 ms 0/280 (0%) 23.658/14.043/30.201/3.052 ms 282 pps 280/7(1) pkts 17
+[ *1] 96.00-97.00 sec  64 datagrams received out-of-order
+[ *1] 97.00-98.00 sec  396200 Bytes  3169600 bits/sec   4.027 ms 2/285 (0.7%) 23.286/13.505/31.089/3.027 ms 281 pps 283/7(1) pkts 17
+[ *1] 97.00-98.00 sec  56 datagrams received out-of-order
+[ *1] 98.00-99.00 sec  390600 Bytes  3124800 bits/sec   3.111 ms 0/277 (0%) 23.337/15.937/31.741/3.017 ms 280 pps 279/7(1) pkts 17
+[ *1] 98.00-99.00 sec  68 datagrams received out-of-order
+[ *1] 99.00-100.00 sec  394800 Bytes  3158400 bits/sec   4.642 ms 0/282 (0%) 23.382/15.853/32.017/3.019 ms 281 pps 282/7(1) pkts 17
+[ *1] 99.00-100.00 sec  65 datagrams received out-of-order
+[ *1] 100.00-101.00 sec  392000 Bytes  3136000 bits/sec   3.655 ms 0/280 (0%) 23.331/11.268/30.601/2.995 ms 280 pps 280/7(1) pkts 17
+[ *1] 100.00-101.00 sec  70 datagrams received out-of-order
+[ *1] 101.00-102.00 sec  393400 Bytes  3147200 bits/sec   4.190 ms 0/281 (0%) 23.307/13.474/31.891/3.061 ms 282 pps 281/7(1) pkts 17
+[ *1] 101.00-102.00 sec  60 datagrams received out-of-order
+[ *1] 102.00-103.00 sec  394800 Bytes  3158400 bits/sec   4.992 ms 0/282 (0%) 23.231/15.896/31.206/2.979 ms 281 pps 282/7(1) pkts 17
+[ *1] 102.00-103.00 sec  67 datagrams received out-of-order
+[ *1] 103.00-104.00 sec  392000 Bytes  3136000 bits/sec   3.992 ms 0/280 (0%) 23.525/15.980/29.743/2.779 ms 280 pps 280/7(1) pkts 17
+[ *1] 103.00-104.00 sec  62 datagrams received out-of-order
+[ *1] 104.00-105.00 sec  394800 Bytes  3158400 bits/sec   4.274 ms 0/282 (0%) 23.562/16.297/32.091/3.018 ms 281 pps 282/7(1) pkts 17
+[ *1] 104.00-105.00 sec  63 datagrams received out-of-order
+[ *1] 105.00-106.00 sec  393400 Bytes  3147200 bits/sec   3.658 ms 1/282 (0.35%) 23.513/13.733/32.499/3.148 ms 282 pps 281/7(1) pkts 17
+[ *1] 105.00-106.00 sec  60 datagrams received out-of-order
+[ *1] 106.00-107.00 sec  390600 Bytes  3124800 bits/sec   3.197 ms 0/278 (0%) 23.435/15.749/31.708/3.154 ms 280 pps 279/7(1) pkts 17
+[ *1] 106.00-107.00 sec  66 datagrams received out-of-order
+[ *1] 107.00-108.00 sec  394800 Bytes  3158400 bits/sec   3.444 ms 0/282 (0%) 23.314/15.947/32.263/2.944 ms 280 pps 282/7(1) pkts 17
+[ *1] 107.00-108.00 sec  60 datagrams received out-of-order
+[ *1] 108.00-109.00 sec  393400 Bytes  3147200 bits/sec   3.300 ms 0/281 (0%) 23.136/13.468/31.207/2.972 ms 281 pps 281/7(1) pkts 17
+[ *1] 108.00-109.00 sec  62 datagrams received out-of-order
+[ *1] 109.00-110.00 sec  393400 Bytes  3147200 bits/sec   2.990 ms 0/281 (0%) 22.910/16.478/32.257/2.809 ms 282 pps 281/6(1) pkts 17
+[ *1] 109.00-110.00 sec  53 datagrams received out-of-order
+[ *1] 110.00-111.00 sec  392000 Bytes  3136000 bits/sec   3.683 ms 0/280 (0%) 23.196/13.448/30.926/3.024 ms 281 pps 280/7(1) pkts 17
+[ *1] 110.00-111.00 sec  67 datagrams received out-of-order
+[ *1] 111.00-112.00 sec  393400 Bytes  3147200 bits/sec   2.364 ms 0/281 (0%) 23.169/11.427/33.082/2.825 ms 280 pps 281/6(1) pkts 17
+[ *1] 111.00-112.00 sec  56 datagrams received out-of-order
+[ *1] 112.00-113.00 sec  392000 Bytes  3136000 bits/sec   3.423 ms 0/280 (0%) 23.346/13.804/33.300/2.950 ms 280 pps 280/7(1) pkts 17
+[ *1] 112.00-113.00 sec  52 datagrams received out-of-order
+[ *1] 113.00-114.00 sec  393400 Bytes  3147200 bits/sec   3.828 ms 0/281 (0%) 23.247/16.215/31.986/2.894 ms 280 pps 281/7(1) pkts 17
+[ *1] 113.00-114.00 sec  56 datagrams received out-of-order
+[ *1] 114.00-115.00 sec  394800 Bytes  3158400 bits/sec   2.561 ms 0/282 (0%) 23.222/14.428/30.315/2.852 ms 281 pps 282/7(1) pkts 17
+[ *1] 114.00-115.00 sec  64 datagrams received out-of-order
+[ *1] 115.00-116.00 sec  393400 Bytes  3147200 bits/sec   2.638 ms 0/281 (0%) 23.359/15.130/33.396/2.881 ms 282 pps 281/7(1) pkts 17
+[ *1] 115.00-116.00 sec  46 datagrams received out-of-order
+[ *1] 116.00-117.00 sec  393400 Bytes  3147200 bits/sec   3.506 ms 0/281 (0%) 23.059/15.366/30.361/2.948 ms 280 pps 281/6(1) pkts 17
+[ *1] 116.00-117.00 sec  63 datagrams received out-of-order
+[ *1] 117.00-118.00 sec  393400 Bytes  3147200 bits/sec   3.687 ms 0/281 (0%) 23.323/14.130/32.446/3.040 ms 282 pps 281/7(1) pkts 17
+[ *1] 117.00-118.00 sec  60 datagrams received out-of-order
+[ *1] 118.00-119.00 sec  390600 Bytes  3124800 bits/sec   3.336 ms 0/279 (0%) 23.692/15.817/32.590/3.076 ms 279 pps 279/7(1) pkts 16
+[ *1] 118.00-119.00 sec  63 datagrams received out-of-order
+[ *1] 119.00-120.00 sec  393400 Bytes  3147200 bits/sec   3.632 ms 0/281 (0%) 23.366/15.713/32.160/2.881 ms 281 pps 281/7(1) pkts 17
+[ *1] 119.00-120.00 sec  60 datagrams received out-of-order
+[ *1] 120.00-121.00 sec  394800 Bytes  3158400 bits/sec   2.704 ms 0/282 (0%) 23.369/13.396/32.988/3.109 ms 281 pps 282/7(1) pkts 17
+[ *1] 120.00-121.00 sec  60 datagrams received out-of-order
+[ *1] 121.00-122.00 sec  392000 Bytes  3136000 bits/sec   2.551 ms 0/280 (0%) 23.457/14.391/32.494/2.892 ms 281 pps 280/7(1) pkts 17
+[ *1] 121.00-122.00 sec  57 datagrams received out-of-order
+[ *1] 122.00-123.00 sec  394800 Bytes  3158400 bits/sec   4.554 ms 0/282 (0%) 23.535/15.284/31.963/2.941 ms 281 pps 282/7(1) pkts 17
+[ *1] 122.00-123.00 sec  70 datagrams received out-of-order
+[ *1] 123.00-124.00 sec  392000 Bytes  3136000 bits/sec   3.635 ms 0/280 (0%) 23.377/12.959/32.921/3.224 ms 280 pps 280/7(1) pkts 17
+[ *1] 123.00-124.00 sec  67 datagrams received out-of-order
+[ *1] 124.00-125.00 sec  394800 Bytes  3158400 bits/sec   3.448 ms 1/283 (0.35%) 23.389/16.163/32.662/2.690 ms 282 pps 282/7(1) pkts 17
+[ *1] 124.00-125.00 sec  51 datagrams received out-of-order
+[ *1] 125.00-126.00 sec  393400 Bytes  3147200 bits/sec   4.667 ms 0/280 (0%) 23.072/14.305/32.321/2.969 ms 281 pps 281/6(1) pkts 17
+[ *1] 125.00-126.00 sec  62 datagrams received out-of-order
+[ *1] 126.00-127.00 sec  392000 Bytes  3136000 bits/sec   3.633 ms 0/280 (0%) 23.307/15.649/32.341/3.211 ms 281 pps 280/7(1) pkts 17
+[ *1] 126.00-127.00 sec  76 datagrams received out-of-order
+[ *1] 127.00-128.00 sec  392000 Bytes  3136000 bits/sec   3.225 ms 1/281 (0.36%) 23.255/16.341/32.372/2.936 ms 279 pps 280/6(1) pkts 17
+[ *1] 127.00-128.00 sec  63 datagrams received out-of-order
+[ *1] 128.00-129.00 sec  394800 Bytes  3158400 bits/sec   3.717 ms 0/282 (0%) 23.318/11.251/31.784/3.204 ms 283 pps 282/7(1) pkts 17
+[ *1] 128.00-129.00 sec  66 datagrams received out-of-order
+[ *1] 129.00-130.00 sec  393400 Bytes  3147200 bits/sec   3.636 ms 0/280 (0%) 23.216/14.325/31.029/2.976 ms 280 pps 281/7(1) pkts 17
+[ *1] 129.00-130.00 sec  61 datagrams received out-of-order
+[ *1] 130.00-131.00 sec  393400 Bytes  3147200 bits/sec   3.842 ms 0/281 (0%) 23.074/16.201/30.811/3.011 ms 282 pps 281/7(1) pkts 17
+[ *1] 130.00-131.00 sec  67 datagrams received out-of-order
+[ *1] 131.00-132.00 sec  392000 Bytes  3136000 bits/sec   3.550 ms 0/280 (0%) 22.979/15.870/29.318/2.815 ms 280 pps 280/6(1) pkts 17
+[ *1] 131.00-132.00 sec  54 datagrams received out-of-order
+[ *1] 132.00-133.00 sec  392000 Bytes  3136000 bits/sec   4.346 ms 0/280 (0%) 23.335/15.506/30.395/2.895 ms 280 pps 280/7(1) pkts 17
+[ *1] 132.00-133.00 sec  64 datagrams received out-of-order
+[ *1] 133.00-134.00 sec  394800 Bytes  3158400 bits/sec   3.800 ms 0/282 (0%) 23.324/13.746/32.691/2.968 ms 282 pps 282/7(1) pkts 17
+[ *1] 133.00-134.00 sec  67 datagrams received out-of-order
+[ *1] 134.00-135.00 sec  393400 Bytes  3147200 bits/sec   4.094 ms 0/281 (0%) 23.533/16.159/29.857/2.931 ms 281 pps 281/7(1) pkts 17
+[ *1] 134.00-135.00 sec  57 datagrams received out-of-order
+[ *1] 135.00-136.00 sec  393400 Bytes  3147200 bits/sec   3.533 ms 0/281 (0%) 23.141/13.953/30.447/2.817 ms 282 pps 281/7(1) pkts 17
+[ *1] 135.00-136.00 sec  58 datagrams received out-of-order
+[ *1] 136.00-137.00 sec  392000 Bytes  3136000 bits/sec   2.606 ms 0/280 (0%) 23.322/16.510/32.374/2.783 ms 279 pps 280/7(1) pkts 17
+[ *1] 136.00-137.00 sec  62 datagrams received out-of-order
+[ *1] 137.00-138.00 sec  394800 Bytes  3158400 bits/sec   3.685 ms 0/282 (0%) 23.227/15.477/30.731/2.943 ms 282 pps 282/7(1) pkts 17
+[ *1] 137.00-138.00 sec  67 datagrams received out-of-order
+[ *1] 138.00-139.00 sec  392000 Bytes  3136000 bits/sec   3.076 ms 0/280 (0%) 23.094/14.195/29.784/2.834 ms 282 pps 280/7(1) pkts 17
+[ *1] 138.00-139.00 sec  50 datagrams received out-of-order
+[ *1] 139.00-140.00 sec  393400 Bytes  3147200 bits/sec   4.000 ms 0/281 (0%) 23.441/14.713/33.996/2.969 ms 279 pps 281/7(1) pkts 17
+[ *1] 139.00-140.00 sec  53 datagrams received out-of-order
+[ *1] 140.00-141.00 sec  394800 Bytes  3158400 bits/sec   3.208 ms 1/283 (0.35%) 23.170/15.463/30.942/2.787 ms 282 pps 282/7(1) pkts 17
+[ *1] 140.00-141.00 sec  61 datagrams received out-of-order
+[ *1] 141.00-142.00 sec  393400 Bytes  3147200 bits/sec   3.025 ms 0/280 (0%) 23.062/14.224/32.167/3.237 ms 282 pps 281/7(1) pkts 17
+[ *1] 141.00-142.00 sec  70 datagrams received out-of-order
+[ *1] 142.00-143.00 sec  392000 Bytes  3136000 bits/sec   3.514 ms 0/280 (0%) 23.218/15.619/33.255/3.256 ms 280 pps 280/7(1) pkts 17
+[ *1] 142.00-143.00 sec  66 datagrams received out-of-order
+[ *1] 143.00-144.00 sec  393400 Bytes  3147200 bits/sec   4.742 ms 0/281 (0%) 23.382/15.077/32.252/3.020 ms 282 pps 281/7(1) pkts 17
+[ *1] 143.00-144.00 sec  67 datagrams received out-of-order
+[ *1] 144.00-145.00 sec  393400 Bytes  3147200 bits/sec   2.922 ms 0/281 (0%) 23.339/15.885/31.968/2.960 ms 280 pps 281/7(1) pkts 17
+[ *1] 144.00-145.00 sec  55 datagrams received out-of-order
+[ *1] 145.00-146.00 sec  393400 Bytes  3147200 bits/sec   3.007 ms 0/281 (0%) 23.219/13.379/30.067/3.103 ms 281 pps 281/7(1) pkts 17
+[ *1] 145.00-146.00 sec  71 datagrams received out-of-order
+[ *1] 146.00-147.00 sec  393400 Bytes  3147200 bits/sec   3.261 ms 1/282 (0.35%) 23.101/14.545/29.970/3.030 ms 280 pps 281/6(1) pkts 17
+[ *1] 146.00-147.00 sec  61 datagrams received out-of-order
+[ *1] 147.00-148.00 sec  392000 Bytes  3136000 bits/sec   2.114 ms 0/279 (0%) 23.200/15.404/30.926/2.733 ms 282 pps 280/7(1) pkts 17
+[ *1] 147.00-148.00 sec  54 datagrams received out-of-order
+[ *1] 148.00-149.00 sec  393400 Bytes  3147200 bits/sec   3.120 ms 0/281 (0%) 23.668/14.688/31.462/2.898 ms 280 pps 281/7(1) pkts 17
+[ *1] 148.00-149.00 sec  65 datagrams received out-of-order
+[ *1] 149.00-150.00 sec  393400 Bytes  3147200 bits/sec   3.018 ms 0/281 (0%) 23.308/13.509/33.274/3.020 ms 281 pps 281/7(1) pkts 17
+[ *1] 149.00-150.00 sec  60 datagrams received out-of-order
+[ *1] 150.00-151.00 sec  393400 Bytes  3147200 bits/sec   3.517 ms 0/281 (0%) 23.210/16.128/31.151/2.902 ms 281 pps 281/7(1) pkts 17
+[ *1] 150.00-151.00 sec  66 datagrams received out-of-order
+[ *1] 151.00-152.00 sec  393400 Bytes  3147200 bits/sec   2.945 ms 0/281 (0%) 23.309/11.272/31.697/3.084 ms 281 pps 281/7(1) pkts 17
+[ *1] 151.00-152.00 sec  63 datagrams received out-of-order
+[ *1] 152.00-153.00 sec  393400 Bytes  3147200 bits/sec   4.029 ms 0/281 (0%) 23.195/12.901/32.287/2.854 ms 281 pps 281/7(1) pkts 17
+[ *1] 152.00-153.00 sec  56 datagrams received out-of-order
+[ *1] 153.00-154.00 sec  393400 Bytes  3147200 bits/sec   4.047 ms 1/282 (0.35%) 23.425/14.693/32.316/2.960 ms 281 pps 281/7(1) pkts 17
+[ *1] 153.00-154.00 sec  60 datagrams received out-of-order
+[ *1] 154.00-155.00 sec  393400 Bytes  3147200 bits/sec   2.603 ms 0/280 (0%) 23.505/16.128/31.515/2.774 ms 281 pps 281/7(1) pkts 17
+[ *1] 154.00-155.00 sec  56 datagrams received out-of-order
+[ *1] 155.00-156.00 sec  390600 Bytes  3124800 bits/sec   2.779 ms 0/279 (0%) 23.214/15.527/31.314/2.888 ms 280 pps 279/6(1) pkts 17
+[ *1] 155.00-156.00 sec  55 datagrams received out-of-order
+[ *1] 156.00-157.00 sec  394800 Bytes  3158400 bits/sec   3.114 ms 1/283 (0.35%) 23.247/13.568/31.461/3.083 ms 282 pps 282/7(1) pkts 17
+[ *1] 156.00-157.00 sec  61 datagrams received out-of-order
+[ *1] 157.00-158.00 sec  393400 Bytes  3147200 bits/sec   3.347 ms 0/280 (0%) 23.153/11.238/30.885/3.228 ms 281 pps 281/7(1) pkts 17
+[ *1] 157.00-158.00 sec  79 datagrams received out-of-order
+[ *1] 158.00-159.00 sec  393400 Bytes  3147200 bits/sec   3.432 ms 0/281 (0%) 23.768/16.741/31.487/2.846 ms 282 pps 281/7(1) pkts 17
+[ *1] 158.00-159.00 sec  56 datagrams received out-of-order
+[ *1] 159.00-160.00 sec  392000 Bytes  3136000 bits/sec   2.861 ms 0/280 (0%) 23.468/16.419/31.751/2.718 ms 280 pps 280/7(1) pkts 17
+[ *1] 159.00-160.00 sec  58 datagrams received out-of-order
+[ *1] 160.00-161.00 sec  393400 Bytes  3147200 bits/sec   3.644 ms 0/281 (0%) 23.340/15.748/31.764/2.873 ms 282 pps 281/7(1) pkts 17
+[ *1] 160.00-161.00 sec  53 datagrams received out-of-order
+[ *1] 161.00-162.00 sec  393400 Bytes  3147200 bits/sec   4.040 ms 0/281 (0%) 23.357/16.832/32.258/2.985 ms 280 pps 281/7(1) pkts 17
+[ *1] 161.00-162.00 sec  52 datagrams received out-of-order
+[ *1] 162.00-163.00 sec  393400 Bytes  3147200 bits/sec   2.641 ms 0/281 (0%) 23.232/11.292/30.782/2.908 ms 281 pps 281/7(1) pkts 17
+[ *1] 162.00-163.00 sec  61 datagrams received out-of-order
+[ *1] 163.00-164.00 sec  393400 Bytes  3147200 bits/sec   3.079 ms 0/281 (0%) 23.375/14.775/30.907/3.015 ms 281 pps 281/7(1) pkts 17
+[ *1] 163.00-164.00 sec  55 datagrams received out-of-order
+[ *1] 164.00-165.00 sec  393400 Bytes  3147200 bits/sec   3.460 ms 0/281 (0%) 23.314/14.715/31.454/3.002 ms 281 pps 281/7(1) pkts 17
+[ *1] 164.00-165.00 sec  68 datagrams received out-of-order
+[ *1] 165.00-166.00 sec  394800 Bytes  3158400 bits/sec   2.696 ms 0/282 (0%) 22.992/11.343/31.490/3.204 ms 282 pps 282/6(1) pkts 17
+[ *1] 165.00-166.00 sec  67 datagrams received out-of-order
+[ *1] 166.00-167.00 sec  393400 Bytes  3147200 bits/sec   3.429 ms 0/281 (0%) 23.215/15.150/32.567/3.104 ms 281 pps 281/7(1) pkts 17
+[ *1] 166.00-167.00 sec  64 datagrams received out-of-order
+[ *1] 167.00-168.00 sec  390600 Bytes  3124800 bits/sec   3.602 ms 0/279 (0%) 23.226/14.555/30.602/2.845 ms 280 pps 279/7(1) pkts 17
+[ *1] 167.00-168.00 sec  50 datagrams received out-of-order
+[ *1] 168.00-169.00 sec  393400 Bytes  3147200 bits/sec   3.506 ms 0/281 (0%) 23.053/14.439/31.822/3.164 ms 281 pps 281/6(1) pkts 17
+[ *1] 168.00-169.00 sec  77 datagrams received out-of-order
+[ *1] 169.00-170.00 sec  396200 Bytes  3169600 bits/sec   3.720 ms 0/283 (0%) 22.977/14.285/30.714/3.050 ms 283 pps 283/7(1) pkts 17
+[ *1] 169.00-170.00 sec  61 datagrams received out-of-order
+[ *1] 170.00-171.00 sec  390600 Bytes  3124800 bits/sec   3.072 ms 0/279 (0%) 23.405/14.444/32.830/3.090 ms 280 pps 279/7(1) pkts 17
+[ *1] 170.00-171.00 sec  63 datagrams received out-of-order
+[ *1] 171.00-172.00 sec  393400 Bytes  3147200 bits/sec   4.040 ms 0/281 (0%) 23.090/16.143/30.256/2.836 ms 280 pps 281/6(1) pkts 17
+[ *1] 171.00-172.00 sec  63 datagrams received out-of-order
+[ *1] 172.00-173.00 sec  393400 Bytes  3147200 bits/sec   3.615 ms 0/281 (0%) 23.127/15.669/31.874/2.968 ms 281 pps 281/6(1) pkts 17
+[ *1] 172.00-173.00 sec  67 datagrams received out-of-order
+[ *1] 173.00-174.00 sec  396200 Bytes  3169600 bits/sec   3.367 ms 0/283 (0%) 23.345/11.313/33.291/3.119 ms 283 pps 283/7(1) pkts 17
+[ *1] 173.00-174.00 sec  64 datagrams received out-of-order
+[ *1] 174.00-175.00 sec  390600 Bytes  3124800 bits/sec   3.240 ms 0/279 (0%) 23.215/15.599/32.867/3.010 ms 280 pps 279/7(1) pkts 17
+[ *1] 174.00-175.00 sec  67 datagrams received out-of-order
+[ *1] 175.00-176.00 sec  393400 Bytes  3147200 bits/sec   3.282 ms 1/282 (0.35%) 23.018/14.642/32.160/2.855 ms 280 pps 281/6(1) pkts 17
+[ *1] 175.00-176.00 sec  58 datagrams received out-of-order
+[ *1] 176.00-177.00 sec  393400 Bytes  3147200 bits/sec   3.002 ms 0/280 (0%) 23.491/15.427/31.768/3.017 ms 281 pps 281/7(1) pkts 17
+[ *1] 176.00-177.00 sec  64 datagrams received out-of-order
+[ *1] 177.00-178.00 sec  392000 Bytes  3136000 bits/sec   3.569 ms 0/280 (0%) 23.493/16.045/32.387/2.950 ms 281 pps 280/7(1) pkts 17
+[ *1] 177.00-178.00 sec  60 datagrams received out-of-order
+[ *1] 178.00-179.00 sec  393400 Bytes  3147200 bits/sec   3.954 ms 0/281 (0%) 23.592/14.570/32.419/2.726 ms 281 pps 281/7(1) pkts 17
+[ *1] 178.00-179.00 sec  49 datagrams received out-of-order
+[ *1] 179.00-180.00 sec  392000 Bytes  3136000 bits/sec   2.957 ms 0/280 (0%) 23.627/14.054/30.765/2.945 ms 280 pps 280/7(1) pkts 17
+[ *1] 179.00-180.00 sec  55 datagrams received out-of-order
+[ *1] 180.00-181.00 sec  394800 Bytes  3158400 bits/sec   4.325 ms 0/282 (0%) 23.035/15.185/30.711/2.916 ms 283 pps 282/7(1) pkts 17
+[ *1] 180.00-181.00 sec  62 datagrams received out-of-order
+[ *1] 181.00-182.00 sec  392000 Bytes  3136000 bits/sec   3.375 ms 0/280 (0%) 23.361/16.323/31.465/2.828 ms 280 pps 280/7(1) pkts 17
+[ *1] 181.00-182.00 sec  57 datagrams received out-of-order
+[ *1] 182.00-183.00 sec  394800 Bytes  3158400 bits/sec   3.541 ms 0/282 (0%) 23.308/14.128/30.028/2.991 ms 281 pps 282/7(1) pkts 17
+[ *1] 182.00-183.00 sec  64 datagrams received out-of-order
+[ *1] 183.00-184.00 sec  392000 Bytes  3136000 bits/sec   4.122 ms 0/280 (0%) 23.357/14.919/33.932/3.237 ms 281 pps 280/7(1) pkts 17
+[ *1] 183.00-184.00 sec  68 datagrams received out-of-order
+[ *1] 184.00-185.00 sec  394800 Bytes  3158400 bits/sec   3.144 ms 0/282 (0%) 23.273/14.058/31.189/2.896 ms 282 pps 282/7(1) pkts 17
+[ *1] 184.00-185.00 sec  64 datagrams received out-of-order
+[ *1] 185.00-186.00 sec  393400 Bytes  3147200 bits/sec   3.201 ms 0/281 (0%) 23.194/14.564/31.477/2.897 ms 281 pps 281/7(1) pkts 17
+[ *1] 185.00-186.00 sec  55 datagrams received out-of-order
+[ *1] 186.00-187.00 sec  392000 Bytes  3136000 bits/sec   4.222 ms 0/280 (0%) 23.083/14.766/31.223/3.118 ms 281 pps 280/6(1) pkts 17
+[ *1] 186.00-187.00 sec  65 datagrams received out-of-order
+[ *1] 187.00-188.00 sec  393400 Bytes  3147200 bits/sec   3.814 ms 0/281 (0%) 23.523/16.747/32.554/3.055 ms 281 pps 281/7(1) pkts 17
+[ *1] 187.00-188.00 sec  63 datagrams received out-of-order
+[ *1] 188.00-189.00 sec  393400 Bytes  3147200 bits/sec   2.621 ms 0/281 (0%) 23.775/12.923/31.012/3.197 ms 280 pps 281/7(1) pkts 17
+[ *1] 188.00-189.00 sec  62 datagrams received out-of-order
+[ *1] 189.00-190.00 sec  394800 Bytes  3158400 bits/sec   3.190 ms 0/282 (0%) 23.480/15.177/33.064/3.080 ms 282 pps 282/7(1) pkts 17
+[ *1] 189.00-190.00 sec  70 datagrams received out-of-order
+[ *1] 190.00-191.00 sec  392000 Bytes  3136000 bits/sec   3.934 ms 0/280 (0%) 23.381/15.433/30.744/3.110 ms 280 pps 280/7(1) pkts 17
+[ *1] 190.00-191.00 sec  72 datagrams received out-of-order
+[ *1] 191.00-192.00 sec  392000 Bytes  3136000 bits/sec   4.510 ms 0/280 (0%) 23.333/13.961/33.259/3.080 ms 281 pps 280/7(1) pkts 17
+[ *1] 191.00-192.00 sec  63 datagrams received out-of-order
+[ *1] 192.00-193.00 sec  394800 Bytes  3158400 bits/sec   2.575 ms 0/282 (0%) 23.252/13.717/32.260/2.789 ms 281 pps 282/7(1) pkts 17
+[ *1] 192.00-193.00 sec  52 datagrams received out-of-order
+[ *1] 193.00-194.00 sec  392000 Bytes  3136000 bits/sec   4.052 ms 0/280 (0%) 23.209/14.674/31.818/3.156 ms 281 pps 280/7(1) pkts 17
+[ *1] 193.00-194.00 sec  66 datagrams received out-of-order
+[ *1] 194.00-195.00 sec  394800 Bytes  3158400 bits/sec   2.211 ms 0/282 (0%) 23.808/16.488/31.381/2.765 ms 281 pps 282/7(1) pkts 17
+[ *1] 194.00-195.00 sec  55 datagrams received out-of-order
+[ *1] 195.00-196.00 sec  392000 Bytes  3136000 bits/sec   3.069 ms 0/280 (0%) 23.617/14.272/31.672/2.968 ms 280 pps 280/7(1) pkts 17
+[ *1] 195.00-196.00 sec  60 datagrams received out-of-order
+[ *1] 196.00-197.00 sec  394800 Bytes  3158400 bits/sec   3.689 ms 0/282 (0%) 23.484/14.450/33.406/3.155 ms 282 pps 282/7(1) pkts 17
+[ *1] 196.00-197.00 sec  64 datagrams received out-of-order
+[ *1] 197.00-198.00 sec  390600 Bytes  3124800 bits/sec   3.717 ms 0/279 (0%) 23.468/15.216/31.384/2.850 ms 281 pps 279/7(1) pkts 17
+[ *1] 197.00-198.00 sec  66 datagrams received out-of-order
+[ *1] 198.00-199.00 sec  394800 Bytes  3158400 bits/sec   3.916 ms 0/282 (0%) 23.344/15.375/30.988/2.965 ms 282 pps 282/7(1) pkts 17
+[ *1] 198.00-199.00 sec  60 datagrams received out-of-order
+[ *1] 199.00-200.00 sec  392000 Bytes  3136000 bits/sec   3.855 ms 0/280 (0%) 23.262/14.924/30.712/2.742 ms 279 pps 280/6(1) pkts 17
+[ *1] 199.00-200.00 sec  56 datagrams received out-of-order
+[ *1] 200.00-201.00 sec  393400 Bytes  3147200 bits/sec   2.968 ms 0/281 (0%) 23.435/14.585/32.478/2.981 ms 282 pps 281/7(1) pkts 17
+[ *1] 200.00-201.00 sec  64 datagrams received out-of-order
+[ *1] 201.00-202.00 sec  393400 Bytes  3147200 bits/sec   4.287 ms 0/281 (0%) 23.239/12.952/31.014/2.919 ms 280 pps 281/7(1) pkts 17
+[ *1] 201.00-202.00 sec  68 datagrams received out-of-order
+[ *1] 202.00-203.00 sec  390600 Bytes  3124800 bits/sec   3.360 ms 0/279 (0%) 23.290/12.980/33.897/2.987 ms 279 pps 279/6(1) pkts 17
+[ *1] 202.00-203.00 sec  64 datagrams received out-of-order
+[ *1] 203.00-204.00 sec  397600 Bytes  3180800 bits/sec   3.820 ms 0/284 (0%) 23.332/11.335/32.459/3.038 ms 283 pps 284/7(1) pkts 17
+[ *1] 203.00-204.00 sec  58 datagrams received out-of-order
+[ *1] 204.00-205.00 sec  392000 Bytes  3136000 bits/sec   2.891 ms 0/280 (0%) 23.243/15.668/30.270/2.829 ms 280 pps 280/7(1) pkts 17
+[ *1] 204.00-205.00 sec  57 datagrams received out-of-order
+[ *1] 205.00-206.00 sec  393400 Bytes  3147200 bits/sec   3.155 ms 0/281 (0%) 23.239/15.623/30.899/2.893 ms 281 pps 281/7(1) pkts 17
+[ *1] 205.00-206.00 sec  58 datagrams received out-of-order
+[ *1] 206.00-207.00 sec  393400 Bytes  3147200 bits/sec   3.938 ms 0/281 (0%) 23.089/14.186/32.836/3.102 ms 282 pps 281/7(1) pkts 17
+[ *1] 206.00-207.00 sec  62 datagrams received out-of-order
+[ *1] 207.00-208.00 sec  393400 Bytes  3147200 bits/sec   3.566 ms 0/281 (0%) 22.955/14.053/31.211/3.390 ms 280 pps 281/6(1) pkts 17
+[ *1] 207.00-208.00 sec  68 datagrams received out-of-order
+[ *1] 208.00-209.00 sec  392000 Bytes  3136000 bits/sec   3.910 ms 0/280 (0%) 23.467/14.547/32.255/2.902 ms 281 pps 280/7(1) pkts 17
+[ *1] 208.00-209.00 sec  60 datagrams received out-of-order
+[ *1] 209.00-210.00 sec  392000 Bytes  3136000 bits/sec   3.060 ms 0/280 (0%) 23.130/16.052/31.673/2.866 ms 280 pps 280/6(1) pkts 17
+[ *1] 209.00-210.00 sec  57 datagrams received out-of-order
+[ *1] 210.00-211.00 sec  396200 Bytes  3169600 bits/sec   4.618 ms 0/283 (0%) 23.432/15.988/30.984/2.990 ms 283 pps 283/7(1) pkts 17
+[ *1] 210.00-211.00 sec  65 datagrams received out-of-order
+[ *1] 211.00-212.00 sec  390600 Bytes  3124800 bits/sec   3.503 ms 0/279 (0%) 23.342/12.826/30.307/3.115 ms 279 pps 279/7(1) pkts 17
+[ *1] 211.00-212.00 sec  66 datagrams received out-of-order
+[ *1] 212.00-213.00 sec  396200 Bytes  3169600 bits/sec   3.434 ms 0/283 (0%) 23.720/15.894/32.641/3.114 ms 283 pps 283/7(1) pkts 17
+[ *1] 212.00-213.00 sec  59 datagrams received out-of-order
+[ *1] 213.00-214.00 sec  390600 Bytes  3124800 bits/sec   4.160 ms 0/279 (0%) 23.357/12.953/33.903/3.027 ms 280 pps 279/7(1) pkts 17
+[ *1] 213.00-214.00 sec  61 datagrams received out-of-order
+[ *1] 214.00-215.00 sec  394800 Bytes  3158400 bits/sec   3.851 ms 0/282 (0%) 23.524/14.668/31.740/3.014 ms 281 pps 282/7(1) pkts 17
+[ *1] 214.00-215.00 sec  65 datagrams received out-of-order
+[ *1] 215.00-216.00 sec  393400 Bytes  3147200 bits/sec   3.001 ms 1/282 (0.35%) 23.040/14.409/30.234/2.791 ms 281 pps 281/6(1) pkts 17
+[ *1] 215.00-216.00 sec  59 datagrams received out-of-order
+[ *1] 216.00-217.00 sec  392000 Bytes  3136000 bits/sec   4.322 ms 0/279 (0%) 23.207/14.247/32.971/2.897 ms 281 pps 280/7(1) pkts 17
+[ *1] 216.00-217.00 sec  60 datagrams received out-of-order
+[ *1] 217.00-218.00 sec  393400 Bytes  3147200 bits/sec   4.404 ms 0/281 (0%) 23.089/15.964/29.988/2.932 ms 282 pps 281/7(1) pkts 17
+[ *1] 217.00-218.00 sec  67 datagrams received out-of-order
+[ *1] 218.00-219.00 sec  393400 Bytes  3147200 bits/sec   3.379 ms 0/281 (0%) 23.442/13.710/32.602/3.066 ms 279 pps 281/7(1) pkts 17
+[ *1] 218.00-219.00 sec  62 datagrams received out-of-order
+[ *1] 219.00-220.00 sec  394800 Bytes  3158400 bits/sec   2.759 ms 0/282 (0%) 23.509/14.859/31.127/2.907 ms 283 pps 282/7(1) pkts 17
+[ *1] 219.00-220.00 sec  57 datagrams received out-of-order
+[ *1] 220.00-221.00 sec  393400 Bytes  3147200 bits/sec   3.476 ms 0/281 (0%) 22.875/13.771/31.507/2.872 ms 280 pps 281/6(1) pkts 17
+[ *1] 220.00-221.00 sec  56 datagrams received out-of-order
+[ *1] 221.00-222.00 sec  390600 Bytes  3124800 bits/sec   4.219 ms 0/279 (0%) 23.212/13.106/33.878/3.155 ms 280 pps 279/6(1) pkts 17
+[ *1] 221.00-222.00 sec  61 datagrams received out-of-order
+[ *1] 222.00-223.00 sec  393400 Bytes  3147200 bits/sec   3.799 ms 1/282 (0.35%) 23.345/14.808/31.993/3.039 ms 281 pps 281/7(1) pkts 17
+[ *1] 222.00-223.00 sec  71 datagrams received out-of-order
+[ *1] 223.00-224.00 sec  394800 Bytes  3158400 bits/sec   3.880 ms 0/281 (0%) 23.057/13.472/31.445/3.114 ms 282 pps 282/7(1) pkts 17
+[ *1] 223.00-224.00 sec  76 datagrams received out-of-order
+[ *1] 224.00-225.00 sec  390600 Bytes  3124800 bits/sec   4.143 ms 0/279 (0%) 23.159/16.056/31.485/2.788 ms 281 pps 279/7(1) pkts 17
+[ *1] 224.00-225.00 sec  63 datagrams received out-of-order
+[ *1] 225.00-226.00 sec  394800 Bytes  3158400 bits/sec   3.744 ms 0/282 (0%) 23.471/15.908/33.010/3.151 ms 280 pps 282/7(1) pkts 17
+[ *1] 225.00-226.00 sec  68 datagrams received out-of-order
+[ *1] 226.00-227.00 sec  394800 Bytes  3158400 bits/sec   3.376 ms 0/282 (0%) 23.232/14.754/31.793/2.927 ms 281 pps 282/7(1) pkts 17
+[ *1] 226.00-227.00 sec  57 datagrams received out-of-order
+[ *1] 227.00-228.00 sec  393400 Bytes  3147200 bits/sec   2.848 ms 0/281 (0%) 23.344/13.835/32.105/2.996 ms 281 pps 281/7(1) pkts 17
+[ *1] 227.00-228.00 sec  60 datagrams received out-of-order
+[ *1] 228.00-229.00 sec  392000 Bytes  3136000 bits/sec   3.848 ms 0/280 (0%) 23.385/16.226/31.909/2.999 ms 281 pps 280/7(1) pkts 17
+[ *1] 228.00-229.00 sec  69 datagrams received out-of-order
+[ *1] 229.00-230.00 sec  392000 Bytes  3136000 bits/sec   4.269 ms 0/280 (0%) 23.403/14.229/32.587/3.309 ms 280 pps 280/7(1) pkts 17
+[ *1] 229.00-230.00 sec  61 datagrams received out-of-order
+[ *1] 230.00-231.00 sec  394800 Bytes  3158400 bits/sec   3.809 ms 0/282 (0%) 23.274/12.997/31.850/2.996 ms 282 pps 282/7(1) pkts 17
+[ *1] 230.00-231.00 sec  57 datagrams received out-of-order
+[ *1] 231.00-232.00 sec  393400 Bytes  3147200 bits/sec   3.330 ms 0/281 (0%) 23.317/16.222/32.437/3.127 ms 280 pps 281/7(1) pkts 17
+[ *1] 231.00-232.00 sec  68 datagrams received out-of-order
+[ *1] 232.00-233.00 sec  392000 Bytes  3136000 bits/sec   2.945 ms 0/280 (0%) 23.227/15.402/31.711/3.188 ms 281 pps 280/7(1) pkts 17
+[ *1] 232.00-233.00 sec  67 datagrams received out-of-order
+[ *1] 233.00-234.00 sec  393400 Bytes  3147200 bits/sec   3.915 ms 0/281 (0%) 23.380/12.940/31.474/3.160 ms 280 pps 281/7(1) pkts 17
+[ *1] 233.00-234.00 sec  67 datagrams received out-of-order
+[ *1] 234.00-235.00 sec  393400 Bytes  3147200 bits/sec   4.328 ms 0/281 (0%) 23.135/14.739/33.251/2.984 ms 282 pps 281/7(1) pkts 17
+[ *1] 234.00-235.00 sec  57 datagrams received out-of-order
+[ *1] 235.00-236.00 sec  392000 Bytes  3136000 bits/sec   3.190 ms 1/281 (0.36%) 23.314/14.022/32.088/3.107 ms 280 pps 280/7(1) pkts 17
+[ *1] 235.00-236.00 sec  63 datagrams received out-of-order
+[ *1] 236.00-237.00 sec  394800 Bytes  3158400 bits/sec   3.919 ms 1/283 (0.35%) 23.168/14.031/31.605/2.932 ms 282 pps 282/7(1) pkts 17
+[ *1] 236.00-237.00 sec  51 datagrams received out-of-order
+[ *1] 237.00-238.00 sec  393400 Bytes  3147200 bits/sec   3.685 ms 0/279 (0%) 23.041/12.970/32.374/2.856 ms 281 pps 281/6(1) pkts 17
+[ *1] 237.00-238.00 sec  60 datagrams received out-of-order
+[ *1] 238.00-239.00 sec  392000 Bytes  3136000 bits/sec   3.607 ms 0/280 (0%) 23.219/15.929/31.042/2.823 ms 279 pps 280/6(1) pkts 17
+[ *1] 238.00-239.00 sec  66 datagrams received out-of-order
+[ *1] 239.00-240.00 sec  393400 Bytes  3147200 bits/sec   4.108 ms 1/282 (0.35%) 23.384/11.282/32.423/3.063 ms 281 pps 281/7(1) pkts 17
+[ *1] 239.00-240.00 sec  64 datagrams received out-of-order
+[ *1] 0.00-240.03 sec  94376800 Bytes  3145529 bits/sec   4.674 ms 0/67412 (0%) 23.327/11.238/34.063/2.987 ms 281 pps 67412/7(1) pkts 17
+[ *1] 0.00-240.03 sec  14865 datagrams received out-of-order

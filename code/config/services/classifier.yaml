@@ -1,0 +1,6 @@
+ClassifierName: Slice Classifier Core Network # the name of the classifier
+sbi: # Service-based interface information
+  scheme: http # the protocol for sbi (http or https)
+  registerIPv4: 172.16.100.20 # IP used to register to NRF
+  bindingIPv4: 172.16.100.20 # IP used to bind the service
+  port: 9090 # Port used to bind the service

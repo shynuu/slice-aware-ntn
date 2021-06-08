@@ -18,15 +18,6 @@ apt-get update
 
 log "Update kernel version: 5.0.0-23-generic"
 apt -y install git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
-# apt-get install -qq \
-#     linux-image-5.0.0-23-generic \
-#     linux-modules-5.0.0-23-generic \
-#     linux-headers-5.0.0-23-generic &&
-#     grub-set-default 1 &&
-#     update-grub
-
-# log "Install Ubuntu Desktop"
-# apt-get install -qq ubuntu-desktop
 
 log "Install Virtualbox dkms"
 apt-get install -qq virtualbox-guest-dkms
