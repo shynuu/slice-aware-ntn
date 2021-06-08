@@ -1,9 +1,5 @@
 FROM golang:1.14 AS builder
 
-RUN GOCACHE=OFF
-RUN go env -w GOPRIVATE=github.com/shynuu
-RUN git config --global url."https://shynuu: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@github.com".insteadOf "https://github.com"
-
 WORKDIR /build
 RUN git clone --recursive -j $(nproc) https://github.com/shynuu/free5gc-populate.git
 WORKDIR /build/free5gc-populate
