@@ -4,11 +4,11 @@ This repository contains all the tools to launch a testbed and experiment our in
 
 ![satellite_transport_network](https://user-images.githubusercontent.com/41422704/121254098-2b37ba00-c8aa-11eb-91ba-537959db5d3b.png)
 
-**Abstract** 
+**Abstract**
 <div style="text-align: justify">
 With the recent integration of Non Terrestrial Networks into 3GPP Release 17, 5G networks are expected to benefit from the NTN large coverage area.
 This integration will help mobile terrestrial networks reach a worldwide coverage.
-However, this ultimate ubiquity also comes with its set of challenges to overcome. 
+However, this ultimate ubiquity also comes with its set of challenges to overcome.
 One of the main issues is the seamless integration of NTN into the existing mobile network standard.
 In this paper, we propose a comprehensive architecture integrating NTNs as slice-aware backhaul links.
 This architecture remains fully compliant with the 3GPP standard.
@@ -42,7 +42,7 @@ Lastly, we evaluate the performances of our method using the aforementioned test
 
 ### Hardware
 
-Hardware resources depends on the scenario you want to evaluate. We recommand at least 8 CPU, 8 GB RAM and 50 GB of disk.
+Hardware resources depend on the scenario you want to evaluate. We recommand at least 8 CPU cores, 8 GB RAM and 50 GB of disk.
 
 ### Software
 
@@ -57,20 +57,20 @@ Hardware resources depends on the scenario you want to evaluate. We recommand at
 
 This testbed has been developed in order to easily define scenarios, deploy them and evaluate their performances using docker containers.
 
-Scenarios are defined in a configuration file which is parsed by the testbed generator. For each scenario, the parser generates a `docker-compose.yaml` file, a set of scripts and configuration files which correspond to the testbed. Under the hood, docker-compose is called when you run the testbed.
+Scenarios are defined in a configuration file which is parsed by the testbed generator. For each scenario, the parser generates a `docker-compose.yaml` file, a set of scripts and configuration files used to run the testbed. Under the hood, docker-compose is called when you run the testbed.
 
-It has been specifically designed to demonstrate our method of NTNs integrated in 5G networks as slice-aware backhaul links.
+This project has been specifically designed to demonstrate that our method can integrate NTNs in 5G networks as slice-aware backhaul links.
 
 ### Install dependencies
 
-First clone the repository
+First clone the repository:
 
 ```bash
 git clone https://github.com/shynuu/slice-aware-ntn
 cd slice-aware-ntn
 ```
 
-Install all the python dependencies :
+Install all the python dependencies:
 
 ```bash
 cd code
@@ -81,7 +81,7 @@ pip3/pip3.8 install -r requirements.txt
 
 Two scenarios are preconfigured in the [scenario file](code/template/scenario.yaml): the **Slice Aware** and **Slice Unaware** scenarios as described in our paper.
 
-These scenarios launches 64 containers (**/!\ Be sure to have enough resources available**):
+These scenarios launch 64 containers (**/!\ Be sure to have enough resources available**):
 
 - 1 gNB
 - 9 UEs
@@ -120,17 +120,15 @@ Options can be specified and help can be display with `python3.8 nt.py run -h`
 - `--iterations <number of iterations>`: By default, each scenario is only executed once. You can run each scenario multiple times with this option
 - `--pcap`: Capture all the traffic with the `--pcap` option (Be sure to have sufficient storage as a single iteration generates a ~ 13 GB pcap file for our scenario)
 
-Both scenarios will run for 240s and generate probe files located in the `code/testbeds` folder. 
+Both scenarios will run for 240s and generate probe files located in the `code/testbeds` folder.
 
-For unknown reasons (we are still investigating), sometimes UEs start and stay in IDLE state and do not establishe PDU Sessions which prevent the correct execution of the testbed. Thus, We implement a try-retry policy and if for a given iteration, some UE do not establish proper PDU sessions, we stop the iteration and retry until all UEs are in the CONNECTED state.
+For unknown reasons (we are still investigating), sometimes UEs start and stay in IDLE state and do not establish PDU Sessions, this prevents the correct execution of the testbed. We thus implemented a try-retry policy and, if for a given iteration, some UEs do not establish proper PDU sessions, we stop the iteration and retry until all UEs are in the CONNECTED state.
 
-At the end of the execution, results would be placed in `code/receipes` folder.
+At the end of the execution, results should be placed in the `code/receipes` folder.
 
 ### Evaluate scenarios
 
-Before evaluating 2 scenarios, you need to run them before to generate probe files.
-
-To evaluate scenarios, run:
+Once you have run the scenarios, probe files are generated. Then, to evaluate the scenarios, simply execute:
 
 ```bash
 python3.8 nt.py evaluate -s1 saw-ntn -s2 suaw-ntn
@@ -141,11 +139,11 @@ You can display help and additionnal options with `python3.8 nt.py evaluate -h`
 - `--plot`: Plot the results with matplotlib
 - `--contribution`: Generate tikz code for latex integration
 
-PDF figures will be generated in folder `code/receipes/eval_saw-ntn_suaw-ntn`
+PDF figures will be generated in the `code/receipes/eval_saw-ntn_suaw-ntn` folder.
 
 ### Samples
 
-We have already executed testbeds and generated results in folder `code/receipes/eval_saw-ntn_suaw-ntn`
+We have already executed testbeds and generated results in the `code/receipes/eval_saw-ntn_suaw-ntn` folder.
 
 ## Custom scenarios
 
@@ -155,14 +153,14 @@ We have already executed testbeds and generated results in folder `code/receipes
 
 ### Vagrant
 
-We provide a Vagrant Box which automatically install all the required dependencies in `vagrant` folder. You will need the following requirements :
+In the `vagrant` folder we provide a Vagrant Box which automatically installs all the required dependencies. You will need the following requirements:
 
 - VirtualBox installed
 - Vagrant plugins disksize and reload (install with `vagrant plugin install vagrant-reload` and `vagrant plugin install vagrant-disksize`)
 
 ### Bare-metal scripts
 
-We provide two scripts for easy installation and configuration :
+We provide two scripts for easy installation and configuration:
 
 - [Kernel update (for Ubuntu 18.04)](scripts/kernel.sh): update kernel to version **5.0.0-23-generic** and reboot
 - [Install dependencies](scripts/install.sh): install dependencies
@@ -186,6 +184,6 @@ We would like to thank the free5gc team for their open-source 5G Core Network as
 
 ## License
 
-The code of the testbed is released under the [MIT](LICENSE), you are free to fork, alter and contribute to the testbed. All python code is documented and any contribution are welcomed !
+The code of this testbed is released under the [MIT license](LICENSE), you are free to fork, alter and contribute to the testbed. All python code is documented and any contribution is welcomed!
 
 Each standalone component used within the testbed has a dedicated license.
