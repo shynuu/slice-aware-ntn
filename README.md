@@ -163,30 +163,30 @@ We have already executed testbeds and generated results in the `code/receipes/ev
 
 You can easily define new scenario configurations and evaluate them by changing the [scenario](code/template/scenario.yaml) file.
 
-Two custom scenarios are given in example `custom-scenario-aware` and `custom-scenario-non-aware` and we detail step by step how to define yours.
+As an example, two custom scenarios are given: `custom-scenario-aware` and `custom-scenario-non-aware`. We detail step by step how to define yours.
 
 #### Scenario configuration
 
 Scenarios need to be evaluated by pair, first in the slice-aware mode and then in the non-slice-aware mode. They should have the exact same topology.
 
-To configure a scenario in the `scenario.yaml`file you need to:
+To configure a scenario in the `scenario.yaml` file you need to:
 
-- Define the number of NTN links provided by the satellite operator. In our example 2 links are provided: 1 LEO (100 Mbps forward, 25 Mbps return, 45 ms += 5 ms delay and no ACM simulation) and 1 GEO (150 Mbps forward, 15 Mbps return, 550 ms += 50 ms delay and no ACM simulation)
+- Define the number of NTN links provided by the satellite operator. In our example, 2 links are provided: 1 LEO (100 Mbps forward, 25 Mbps return, 45 ms += 5 ms delay and no ACM simulation) and 1 GEO (150 Mbps forward, 15 Mbps return, 550 ms += 50 ms delay and no ACM simulation)
 - Define the slices running on each link. In our example, 1 slice runs on each link: S0 for 60s on LEO link and S1 for 60s on GEO link
-- Define the applications instanciated on each slice Data Network. In our example on S0 we have VoIP and Web applications and on S1 we have Streaming and VoIP applications
+- Define the applications instanciated on each slice Data Network. In our example, on S0 we have VoIP and Web applications and on S1 we have Streaming and VoIP applications
 - Define the number of UE in the RAN
 - Set the total duration of scenario
 - Give a name to the slice-aware and non-slice-aware scenarios. `custom-scenario-aware` and `custom-scenario-non-aware` in our example
 
 #### Run the scenarios
 
-Now that you have define your own scenario, you can run them with:
+Once you have defined your own scenarios, you can run them with:
 
 ```bash
 python3.8 nt.py run --scenario custom-scenario-aware custom-scenario-non-aware --iterations 10
 ```
 
-This will run the testbed associated to the scenario and generate probe files in `receipes/custom-scenario-aware` and `receipes/custom-scenario-non-aware` folders.
+This will run the testbed associated with the scenario and generate probe files in `receipes/custom-scenario-aware` and `receipes/custom-scenario-non-aware` folders.
 
 You can also only generate the testbed configuration file with:
 
@@ -210,7 +210,7 @@ This will generate PDF figures, Tikz latex code in `code/receipes/eval_custom-sc
 
 *slice-aware* and *non-slice-aware* scenarios are configured in python scripts. The testbed is not limited to these scenarios and you can add your own scenario definition to generate your custom testbed.
 
-We highly recommand you to take a look at these scenario files when following the below instructions. They are well documented and helpful to understand the definition logic.
+We highly recommend you to take a look at these scenario files when following the instructions below. They are well documented and helpful to understand the definition logic.
 
 ### Testbed configuration file
 
@@ -224,8 +224,8 @@ The first step is to add your image Dockerfile to the [containers](code/config/c
 
 The workflow is the following:
 
-- Create the Dockerfile dedicated to your service in a dedicated folder wihtin the [main](code/config/containers/main) folder. This Dockerfile can use the multistage technique and call for images in the [required](code/config/containers/required) folder. An example of such Dockerfile is the [gnb](code/config/containers/main/gnb/Dockerfile) which calls the [ueransim](code/config/containers/required/ueransim/Dockerfile) image.
-- Create the required Dockerfile used by your multistage build if needed under a dedicated folder within [required](code/config/containers/required) folder.
+- Create the Dockerfile dedicated to your service in a dedicated folder within the [main](code/config/containers/main) folder. This Dockerfile can use the multistage technique and call for images in the [required](code/config/containers/required) folder. An example of such Dockerfile is the [gnb](code/config/containers/main/gnb/Dockerfile) which calls the [ueransim](code/config/containers/required/ueransim/Dockerfile) image.
+- Create the required Dockerfile used by your multistage build if needed under a dedicated folder within the [required](code/config/containers/required) folder.
 - Add configuration files of the service under the [services](code/config/services/) folder.
 - Add your Dockerfiles to the [images](code/config/containers/images.yaml) configuration file with the same name as your folder.
 
@@ -246,7 +246,7 @@ You can now build the image alongside all the required images and add them to yo
 python3.8 nt.py images --build new_service --main-cache --pre-cache
 ```
 
-The *new_service* image will be built with the tag *account/myrepo:new_service*. `--main-cache` and `--pre-cache` pass the `--no-cache` option to `docker build` command.
+The *new_service* image will be built with the tag *account/myrepo:new_service*. `--main-cache` and `--pre-cache` pass the `--no-cache` option to the `docker build` command.
 
 Now that you have the docker image ready, you can define the python code of your service.
 
@@ -256,7 +256,7 @@ Before defining the scenario logic and topology, you need to define the services
 
 Create a new python file within the [model](code/source/model/) folder with the name of your scenario implementing all your services.
 
-Each service needs to implement the [Service](code/source/model/__init__.py#L60) class
+Each service needs to implement the [Service](code/source/model/__init__.py#L60) class:
 
 ```python
 class Service(object):
@@ -319,17 +319,17 @@ class Service(object):
             self.entrypoint.write(repository.containers_folder, self.name)
 ```
 
-When you're done, you can define the scenario and scenario topology
+When you're done, you can define the scenario and scenario topology.
 
 ### Create scenario files
 
 Create a new python file within the [model](code/source/model/) folder with the name of your scenario implementing all your services.
 
-Each service needs to implement the [Scenario](code/source/scenario/__init__.py#L28) class
+Each service needs to implement the [Scenario](code/source/scenario/__init__.py#L28) class.
 
-For each scenario, you need to specify the `scenario_type` which acts as the identifier of the scenario type in the [scenario.yaml](code/template/scenario.yaml) file
+For each scenario, you need to specify the `scenario_type` which acts as the identifier of the scenario type in the [scenario.yaml](code/template/scenario.yaml) file.
 
-You can optionnaly define a `validation_scheme` using [cerberus](https://docs.python-cerberus.org/en/stable/schemas.html) to validate the user input in [scenario.yaml](code/template/scenario.yaml)
+You can optionally define a `validation_scheme` using [cerberus](https://docs.python-cerberus.org/en/stable/schemas.html) to validate the user input in [scenario.yaml](code/template/scenario.yaml)
 
 ```python
 class Scenario(object):
@@ -503,7 +503,7 @@ class Selector(object):
 
 You need to define a specific evaluator to your scenario based on the probes it generates.
 
-This evaluator need to implement the [Evaluator](code/source/evaluator/__init__.py#L21) class.
+This evaluator needs to implement the [Evaluator](code/source/evaluator/__init__.py#L21) class.
 
 ```python
 class Evaluator(object):
@@ -521,7 +521,7 @@ class Evaluator(object):
 
 ### Configure and run the scenario
 
-Add you scenario confguration in the [scenario file](code/template/scenario.yaml) and run the scenario using the `run` command.
+You're now all set to add your scenario configuration in the [scenario file](code/template/scenario.yaml) and execute it using the [`run`](#run-scenarios) command!
 
 ## Helpers
 
