@@ -3,7 +3,7 @@ saw-ntn: # Define the name of the scenario
   duration: 240 # The total duration of the scenario in seconds
   user: 9 # specify the number of User Equipments
   links: # Define the NTN links with each slice supported inside
-    - default: false # Define if this link
+    - default: false # Define if this link is the default one for 5G Control Plane
       forward: 100 # the forward link bandwidth in Mbit/s
       return: 25 # the return link bandwidth in Mbit/s
       delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
@@ -34,7 +34,7 @@ saw-ntn: # Define the name of the scenario
           applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
             - name: streaming
               data_rate: 10
-    - default: true # Define if this link
+    - default: true # Define if this link is the default one for 5G Control Plane
       forward: 150 # the forward link bandwidth in Mbit/s
       return: 15 # the return link bandwidth in Mbit/s
       delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
@@ -58,7 +58,7 @@ suaw-ntn: # Define the name of the scenario
   duration: 240 # The total duration of the scenario in seconds
   user: 9 # specify the number of User Equipments
   links: # Define the NTN links with each slice supported inside
-    - default: false # Define if this link
+    - default: false # Define if this link is the default one for 5G Control Plane
       forward: 100 # the forward link bandwidth in Mbit/s
       return: 25 # the return link bandwidth in Mbit/s
       delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
@@ -89,7 +89,7 @@ suaw-ntn: # Define the name of the scenario
           applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
             - name: streaming
               data_rate: 10
-    - default: true # Define if this link
+    - default: true # Define if this link is the default one for 5G Control Plane
       forward: 150 # the forward link bandwidth in Mbit/s
       return: 15 # the return link bandwidth in Mbit/s
       delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
