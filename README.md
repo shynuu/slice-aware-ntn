@@ -29,7 +29,18 @@ Lastly, we evaluate the performances of our method using the aforementioned test
   - [Run scenarios](#run-scenarios)
   - [Evaluate scenarios](#evaluate-scenarios)
   - [Samples](#samples)
-- [Custom scenarios](#custom-scenarios)
+  - [Custom scenarios](#custom-scenarios)
+    - [Scenario configuration](#scenario-configuration)
+    - [Run the scenarios](#run-the-scenarios)
+    - [Evaluate performances and plot results](#evaluate-performances-and-plot-results)
+- [Advanced testbed configuration](#advanced-testbed-configuration)
+  - [Testbed configuration file](#testbed-configuration-file)
+  - [Add docker containers](#add-docker-containers)
+  - [Define services](#define-services)
+  - [Create scenario files](#create-scenario-files)
+  - [Add the scenario to the testbed](#add-the-scenario-to-the-testbed)
+  - [Add the evaluator for the scenario](#add-the-evaluator-for-the-scenario)
+  - [Configure and run the scenario](#configure-and-run-the-scenario)
 - [Helpers](#helpers)
   - [Vagrant](#vagrant)
   - [Bare-metal scripts](#bare-metal-scripts)
@@ -126,6 +137,8 @@ For unknown reasons (we are still investigating), sometimes UEs start and stay i
 
 At the end of the execution, results should be placed in the `code/receipes` folder.
 
+You can list all the running containers with `docker container ls` and display a container log with `docker logs <container-name>`.
+
 ### Evaluate scenarios
 
 Once you have run the scenarios, probe files are generated. Then, to evaluate the scenarios, simply execute:
@@ -145,9 +158,370 @@ PDF figures will be generated in the `code/receipes/eval_saw-ntn_suaw-ntn` folde
 
 We have already executed testbeds and generated results in the `code/receipes/eval_saw-ntn_suaw-ntn` folder.
 
-## Custom scenarios
 
-*In progress...*
+### Custom scenarios
+
+You can easily define new scenario configurations and evaluate them by changing the [scenario](code/template/scenario.yaml) file.
+
+Two custom scenarios are given in example `custom-scenario-aware` and `custom-scenario-non-aware` and we detail step by step how to define yours.
+
+#### Scenario configuration
+
+Scenarios need to be evaluated by pair, first in the slice-aware mode and then in the non-slice-aware mode. They should have the exact same topology.
+
+To configure a scenario in the `scenario.yaml`file you need to:
+
+- Define the number of NTN links provided by the satellite operator. In our example 2 links are provided: 1 LEO (100 Mbps forward, 25 Mbps return, 45 ms += 5 ms delay and no ACM simulation) and 1 GEO (150 Mbps forward, 15 Mbps return, 550 ms += 50 ms delay and no ACM simulation)
+- Define the slices running on each link. In our example, 1 slice runs on each link: S0 for 60s on LEO link and S1 for 60s on GEO link
+- Define the applications instanciated on each slice Data Network. In our example on S0 we have VoIP and Web applications and on S1 we have Streaming and VoIP applications
+- Define the number of UE in the RAN
+- Set the total duration of scenario
+- Give a name to the slice-aware and non-slice-aware scenarios. `custom-scenario-aware` and `custom-scenario-non-aware` in our example
+
+#### Run the scenarios
+
+Now that you have define your own scenario, you can run them with:
+
+```bash
+python3.8 nt.py run --scenario custom-scenario-aware custom-scenario-non-aware --iterations 10
+```
+
+This will run the testbed associated to the scenario and generate probe files in `receipes/custom-scenario-aware` and `receipes/custom-scenario-non-aware` folders.
+
+You can also only generate the testbed configuration file with:
+
+```bash
+python3.8 nt.py generate --scenario custom-scenario-aware custom-scenario-non-aware --iterations 10
+```
+
+This will output all the configuration files in the `code/testbeds` folder.
+
+#### Evaluate performances and plot results
+
+To evaluate scenarios, run:
+
+```bash
+python3.8 nt.py evaluate -s1 custom-scenario-aware -s2 custom-scenario-non-aware --plot --contribution
+```
+
+This will generate PDF figures, Tikz latex code in `code/receipes/eval_custom-scenario-aware_custom-scenario-non-aware` folder and plot figures with matplotlib.
+
+## Advanced testbed configuration
+
+*slice-aware* and *non-slice-aware* scenarios are configured in python scripts. The testbed is not limited to these scenarios and you can add your own scenario definition to generate your custom testbed.
+
+We highly recommand you to take a look at these scenario files when following the below instructions. They are well documented and helpful to understand the definition logic.
+
+### Testbed configuration file
+
+The testbed global configuration file is located in the [code/configuration.conf](code/configuration.conf) file. You can manage images folder, service configuration folder and output folders.
+
+In case you alter this file, please adapt the following instructions.
+
+### Add docker containers
+
+The first step is to add your image Dockerfile to the [containers](code/config/containers/) folder.
+
+The workflow is the following:
+
+- Create the Dockerfile dedicated to your service in a dedicated folder wihtin the [main](code/config/containers/main) folder. This Dockerfile can use the multistage technique and call for images in the [required](code/config/containers/required) folder. An example of such Dockerfile is the [gnb](code/config/containers/main/gnb/Dockerfile) which calls the [ueransim](code/config/containers/required/ueransim/Dockerfile) image.
+- Create the required Dockerfile used by your multistage build if needed under a dedicated folder within [required](code/config/containers/required) folder.
+- Add configuration files of the service under the [services](code/config/services/) folder.
+- Add your Dockerfiles to the [images](code/config/containers/images.yaml) configuration file with the same name as your folder.
+
+```yaml
+images:
+  - name: "new_service"
+    fulltag: "account/myrepo:new_service"
+    required:
+      - "new_service_requirement"
+required:
+  - name: "new_service_requirement"
+    fulltag: "account/myrepo:new_service_requirement"
+```
+
+You can now build the image alongside all the required images and add them to your local repository with:
+
+```bash
+python3.8 nt.py images --build new_service --main-cache --pre-cache
+```
+
+The *new_service* image will be built with the tag *account/myrepo:new_service*. `--main-cache` and `--pre-cache` pass the `--no-cache` option to `docker build` command.
+
+Now that you have the docker image ready, you can define the python code of your service.
+
+### Define services
+
+Before defining the scenario logic and topology, you need to define the services.
+
+Create a new python file within the [model](code/source/model/) folder with the name of your scenario implementing all your services.
+
+Each service needs to implement the [Service](code/source/model/__init__.py#L60) class
+
+```python
+class Service(object):
+    """Service class"""
+
+    configuration_file = None
+    docker_image = None
+
+    def __init__(self, name: str, repository: Repository) -> None:
+        self.name = name
+        self.networks: Dict[str, ipaddress.IPv4Address] = {}
+        self.compose = None
+        self.entrypoint = None
+
+        if self.configuration_file != None:
+            path = f"{repository.configurations_folder}/{self.configuration_file}"
+            with codecs.open(path, mode="r", encoding="utf8") as f:
+                self.configuration = yaml.load(
+                    f.read(), Loader=yaml.RoundTripLoader)
+
+    def attach_network(self, name: str, address: ipaddress.IPv4Address):
+        """Add a network address to the service"""
+        self.networks[name] = address
+
+    def write_configuration(self, folder_path: str) -> None:
+        """
+        Write the configuration file of the service
+        """
+
+        if self.configuration_file != None:
+            path = f"{folder_path}/{self.name}.yaml"
+            yam = yaml.YAML()
+            yam.indent(sequence=4, offset=2)
+            with codecs.open(path, "w", encoding="utf-8") as configuration:
+                yam.representer.add_representer(HexInt, representer)
+                yam.dump(self.configuration, configuration)
+
+    def configure(self, repository: Repository) -> None:
+        """Configure the service"""
+        logging.error(
+            f"{self.name} service function configure not implemented, I QUIT !")
+        sys.exit(1)
+
+    def configure_compose(self, repository: Repository) -> None:
+        """Configure the service docker compose"""
+        logging.error(
+            f"{self.name} service function configure_compose not implemented, I QUIT !")
+        sys.exit(1)
+
+    def configure_entrypoint(self, repository: Repository) -> None:
+        """Configure the entrypoint if necessarily"""
+        if self.compose.entrypoint != None:
+            logging.error(
+                f"{self.name} service function configure_entrypoint not implemented, I QUIT !")
+            sys.exit(1)
+
+    def write_entrypoint(self, repository: Repository) -> None:
+        """Write the entrypoint if necessarily"""
+        if self.entrypoint != None:
+            self.entrypoint.write(repository.containers_folder, self.name)
+```
+
+When you're done, you can define the scenario and scenario topology
+
+### Create scenario files
+
+Create a new python file within the [model](code/source/model/) folder with the name of your scenario implementing all your services.
+
+Each service needs to implement the [Scenario](code/source/scenario/__init__.py#L28) class
+
+For each scenario, you need to specify the `scenario_type` which acts as the identifier of the scenario type in the [scenario.yaml](code/template/scenario.yaml) file
+
+You can optionnaly define a `validation_scheme` using [cerberus](https://docs.python-cerberus.org/en/stable/schemas.html) to validate the user input in [scenario.yaml](code/template/scenario.yaml)
+
+```python
+class Scenario(object):
+    """Generic Scenario Interface"""
+
+    validation_schema = None
+    scenario_type = "generic"
+
+    def __init__(self, definition: Dict) -> None:
+        self.name = definition['name']
+        self.definition = definition
+        self.networker = Networker()
+        self.repository = Repository()
+
+    def set_path(self, results_folder: str, containers_folder: str, configurations_folder: str, output_configuration_folder: str, scenario_folder: str):
+        """
+        Set the path for the output folders
+        """
+
+        self.repository.results_folder = results_folder
+        self.repository.containers_folder = containers_folder
+        self.repository.configurations_folder = configurations_folder
+        self.repository.output_configuration_folder = output_configuration_folder
+        self.repository.scenario_folder = scenario_folder
+
+    def prepare_scenario(self) -> None:
+        """
+        Prepare all the requirements prior to the generation of the scenario topology
+        """
+
+        logging.info(
+            f"[{self.name}] prepare_scenario function undefined, I QUIT !")
+        sys.exit(1)
+
+    def generate_networks(self) -> None:
+        """
+        Generate the networks of the testbed
+        """
+
+        logging.info(
+            f"[{self.name}] generate_networks function undefined, I QUIT !")
+        sys.exit(1)
+
+    def generate_topology(self) -> None:
+        """
+        Create all the services and generate the network topology of the scenario
+        """
+
+        logging.info(
+            f"[{self.name}] generate_topology function undefined, I QUIT !")
+        sys.exit(1)
+
+    def configure_services(self) -> None:
+        """
+        Configure all the services
+        """
+
+        for service in sorted(self.repository.services):
+            self.repository.services.get(service).configure(self.repository)
+
+    def configure_compose(self) -> None:
+        """
+        Configure the services docker compose part
+        """
+
+        for service in sorted(self.repository.services):
+            self.repository.services.get(
+                service).configure_compose(self.repository)
+
+    def configure_entrypoint(self) -> None:
+        """
+        Configure the services entrypoint
+        """
+
+        for service in sorted(self.repository.services):
+            self.repository.services.get(
+                service).configure_entrypoint(self.repository)
+
+    def write_configuration(self) -> None:
+        """
+        Write the configuration files of each service
+        """
+
+        for service in sorted(self.repository.services):
+            s = self.repository.services.get(service)
+            s.write_configuration(self.repository.output_configuration_folder)
+
+    def write_entrypoint(self) -> None:
+        """
+        Write entrypoints for each service
+        """
+
+        for service in sorted(self.repository.services):
+            s: Service = self.repository.services.get(service)
+            s.write_entrypoint(self.repository)
+
+    def write_compose(self) -> None:
+        """
+        Write docker-compose.yaml file
+        """
+
+        output = {
+            "version": "3.9",
+            "services": {},
+            "networks": {},
+            "volumes": {"dbdata": None}
+        }
+
+        for service in sorted(self.repository.services):
+            if self.repository.services[service].compose != None:
+                output["services"][service] = self.repository.services[service].compose.generate()
+
+        network_index: int = 0
+        for network in sorted(self.networker.networks_name):
+            output["networks"][network] = {
+                "name": network,
+                "driver": "bridge",
+                "ipam": {
+                    "driver": "default",
+                    "config": [
+                        {
+                            "subnet": str(
+                                self.networker.networks_name.get(network))
+                        }
+                    ]
+                },
+                "driver_opts":
+                {
+                    "com.docker.network.bridge.name": f"network-{network_index}"
+                }
+            }
+            network_index += 1
+
+        path: str = f"{self.repository.scenario_folder}/{self.name}/docker-compose.yaml"
+        yam = yaml.YAML()
+        yam.indent(sequence=4, offset=2)
+        with codecs.open(path, "w", encoding="utf-8") as compose_file:
+            yam.dump(output,  compose_file)
+
+    def run(self) -> None:
+        logging.info(f"[{self.name}] run function undefined, I QUIT !")
+        sys.exit(1)
+```
+
+When you run a scenario, the functions are called following this order:
+
+```python
+scenario.prepare_scenario()
+scenario.generate_networks()
+scenario.generate_topology()
+scenario.configure_services()
+scenario.write_configuration()
+scenario.configure_compose()
+scenario.configure_entrypoint()
+scenario.write_entrypoint()
+scenario.write_compose()
+```
+
+### Add the scenario to the testbed
+
+Add the scenario to the supported testbed scenario in [testbed](code/source/testbed/testbed.py#L27) as follows:
+
+```python
+class Selector(object):
+    """Scenario selector class"""
+
+    scenarios = [SliceAwareNTN, NonSliceAwareNTN, MyNewScenario]
+```
+
+### Add the evaluator for the scenario
+
+You need to define a specific evaluator to your scenario based on the probes it generates.
+
+This evaluator need to implement the [Evaluator](code/source/evaluator/__init__.py#L21) class.
+
+```python
+class Evaluator(object):
+    """Generic Evaluator Class"""
+
+    def __init__(self, t1: Testbed, t2: Testbed) -> None:
+        self.t1 = t1
+        self.t2 = t2
+        self.output_path = None
+
+    def evaluate(self, contribution: bool, plot: bool) -> None:
+        """generic evaluate function"""
+        pass
+```
+
+### Configure and run the scenario
+
+Add you scenario confguration in the [scenario file](code/template/scenario.yaml) and run the scenario using the `run` command.
 
 ## Helpers
 
