@@ -552,6 +552,8 @@ We provide two scripts for easy installation and configuration:
 
 This specific work has been achieved in the SUPER-G project within [IRT Saint Exupéry](https://www.irt-saintexupery.com/).
 
+You can reach us at youssouf.drif@irt-saintexupery.com
+
 ## Acknownledgments
 
 We would like to thank the free5gc team for their open-source 5G Core Network as well as UERANSIM team for their open-source software gNB and UE.
