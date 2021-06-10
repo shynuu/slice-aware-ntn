@@ -490,7 +490,7 @@ scenario.write_compose()
 
 ### Add the scenario to the testbed
 
-Add the scenario to the supported testbed scenario in [testbed](code/source/testbed/testbed.py#L27) as follows:
+Add the scenario to the testbed scenario in [testbed](code/source/testbed/testbed.py#L27) as follows:
 
 ```python
 class Selector(object):
