@@ -305,7 +305,7 @@ class SSEvaluator(Evaluator):
         if not os.path.exists(pth):
             os.makedirs(pth)
 
-    def parse_slices(self, testbed: Testbed) -> List:
+    def parse_slices(self, testbed: Testbed, aware: bool) -> List:
 
         parsed = []
         slices = testbed.scenario.repository.get_misc("slices")
@@ -319,7 +319,7 @@ class SSEvaluator(Evaluator):
 
             max_duration = testbed.scenario.get_max_duration(slices)
 
-            slices_probes: List[Slice] = [Slice(i, slices[i], True)
+            slices_probes: List[Slice] = [Slice(i, slices[i], aware)
                                           for i in range(n_slice)]
 
             for k in range(len(slices)):
@@ -365,8 +365,8 @@ class SSEvaluator(Evaluator):
 
     def evaluate(self, contribution: bool, plot: bool) -> None:
 
-        sl_saw = self.parse_slices(self.t1)
-        sl_suaw = self.parse_slices(self.t2)
+        sl_saw = self.parse_slices(self.t1, True)
+        sl_suaw = self.parse_slices(self.t2, False)
 
         slices_sa = self.mean_slices(sl_saw, self.t1)
         slices_non_sa = self.mean_slices(sl_suaw, self.t2)
