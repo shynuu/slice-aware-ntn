@@ -374,7 +374,7 @@ saw-c: # Define the name of the scenario
             - name: voip
               data_rate: 128
             - name: web
-              data_rate: 9
+              data_rate: 8
         - start: 30 # Specify the start time of the traffic for this slice
           end: 60 # Specify the duration time of the traffic for this slice
           theta: # specify the theta parameter for the interface between the mobile and NTN networks
@@ -429,7 +429,7 @@ suaw-c: # Define the name of the scenario
             - name: voip
               data_rate: 128
             - name: web
-              data_rate: 9
+              data_rate: 8
         - start: 30 # Specify the start time of the traffic for this slice
           end: 60 # Specify the duration time of the traffic for this slice
           theta: # specify the theta parameter for the interface between the mobile and NTN networks
