@@ -40,7 +40,7 @@ class NonSliceAwareNTN(Scenario):
     validation_schema = {
         'type': {'type': 'string', 'required': True},
         'duration': {'type': 'integer', 'required': True},
-        'user': {'type': 'integer', 'required': True, 'min': 1, 'max': 10},
+        'user': {'type': 'integer', 'required': True, 'min': 1, 'max': 30},
         'links': {'type': 'list', 'required': True, 'minlength': 1, 'maxlength': 2, 'schema': {
             'type': 'dict', 'schema': {
                 'default': {'type': 'boolean', 'required': True, 'default': False},
