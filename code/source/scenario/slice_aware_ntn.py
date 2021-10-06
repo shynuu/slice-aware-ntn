@@ -324,15 +324,17 @@ class SliceAwareNTN(Scenario):
             cmd = f"docker-compose -f {path} down -v"
             subprocess.call(cmd, shell=True)
 
-        def wait_for_configuration(client) -> None:
+        def wait_for_configuration(client, n) -> None:
             started = False
             configured = False
             while not started:
                 try:
-                    ue = client.containers.get("ue-0")
+                    for i in range(n):
+                        client.containers.get(f"ue-{i}")
                     started = True
                 except:
                     time.sleep(1)
+            ue = client.containers.get("ue-0")
             (c, r) = ue.exec_run("ip a")
             result = r.decode('utf-8').split("\n")
             l = len(result)
@@ -384,7 +386,7 @@ class SliceAwareNTN(Scenario):
         logging.info("Starting testbed...")
         start_testbed(compose_path)
         logging.info("Waiting for UE configuration...")
-        wait_for_configuration(client)
+        wait_for_configuration(client, len(users))
         time.sleep(15)
 
         ue_ips: List[List[str]] = []
