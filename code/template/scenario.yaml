@@ -353,9 +353,9 @@ suaw-b: # Define the name of the scenario
 saw-c: # Define the name of the scenario
   type: "slice-aware" # The type of scenario
   duration: 60 # The total duration of the scenario in seconds
-  user: 20 # specify the number of User Equipments
+  user: 5 # specify the number of User Equipments
   links: # Define the NTN links with each slice supported inside
-    - default: true # Define if this link is the default one for 5G Control Plane
+    - default: false # Define if this link is the default one for 5G Control Plane
       forward: 100 # the forward link bandwidth in Mbit/s
       return: 25 # the return link bandwidth in Mbit/s
       delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
@@ -374,7 +374,7 @@ saw-c: # Define the name of the scenario
             - name: voip
               data_rate: 128
             - name: web
-              data_rate: 2
+              data_rate: 9
         - start: 30 # Specify the start time of the traffic for this slice
           end: 60 # Specify the duration time of the traffic for this slice
           theta: # specify the theta parameter for the interface between the mobile and NTN networks
@@ -385,4 +385,187 @@ saw-c: # Define the name of the scenario
             sigma: true # the resource sharing between the NTN links
           applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
             - name: streaming
+              data_rate: 5
+    - default: true # Define if this link is the default one for 5G Control Plane
+      forward: 150 # the forward link bandwidth in Mbit/s
+      return: 15 # the return link bandwidth in Mbit/s
+      delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 50 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 550 # the targeted latency in ms
+            delta: 50 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 150 # the download throughput in Mbit/s
+            sigma: false # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 15
+
+suaw-c: # Define the name of the scenario
+  type: "non-slice-aware" # The type of scenario
+  duration: 60 # The total duration of the scenario in seconds
+  user: 5 # specify the number of User Equipments
+  links: # Define the NTN links with each slice supported inside
+    - default: false # Define if this link is the default one for 5G Control Plane
+      forward: 100 # the forward link bandwidth in Mbit/s
+      return: 25 # the return link bandwidth in Mbit/s
+      delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 5 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 10 # the upload throughput in Mbit/s
+            beta: 50 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: voip
+              data_rate: 128
+            - name: web
+              data_rate: 9
+        - start: 30 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 10 # the upload throughput in Mbit/s
+            beta: 50 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 5
+    - default: true # Define if this link is the default one for 5G Control Plane
+      forward: 150 # the forward link bandwidth in Mbit/s
+      return: 15 # the return link bandwidth in Mbit/s
+      delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 50 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 550 # the targeted latency in ms
+            delta: 50 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 150 # the download throughput in Mbit/s
+            sigma: false # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 15
+
+saw-d: # Define the name of the scenario
+  type: "slice-aware" # The type of scenario
+  duration: 60 # The total duration of the scenario in seconds
+  user: 9 # specify the number of User Equipments
+  links: # Define the NTN links with each slice supported inside
+    - default: false # Define if this link is the default one for 5G Control Plane
+      forward: 100 # the forward link bandwidth in Mbit/s
+      return: 25 # the return link bandwidth in Mbit/s
+      delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 5 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 10 # the upload throughput in Mbit/s
+            beta: 35 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: voip
+              data_rate: 128
+            - name: web
               data_rate: 3
+        - start: 30 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 65 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 10
+    - default: true # Define if this link is the default one for 5G Control Plane
+      forward: 150 # the forward link bandwidth in Mbit/s
+      return: 15 # the return link bandwidth in Mbit/s
+      delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 50 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 550 # the targeted latency in ms
+            delta: 50 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 40 # the download throughput in Mbit/s
+            sigma: false # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 4
+
+suaw-d: # Define the name of the scenario
+  type: "non-slice-aware" # The type of scenario
+  duration: 60 # The total duration of the scenario in seconds
+  user: 9 # specify the number of User Equipments
+  links: # Define the NTN links with each slice supported inside
+    - default: false # Define if this link is the default one for 5G Control Plane
+      forward: 100 # the forward link bandwidth in Mbit/s
+      return: 25 # the return link bandwidth in Mbit/s
+      delay: 45 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 5 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 10 # the upload throughput in Mbit/s
+            beta: 35 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: voip
+              data_rate: 128
+            - name: web
+              data_rate: 3
+        - start: 30 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 45 # the targeted latency in ms
+            delta: 5 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 65 # the download throughput in Mbit/s
+            sigma: true # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 10
+    - default: true # Define if this link is the default one for 5G Control Plane
+      forward: 150 # the forward link bandwidth in Mbit/s
+      return: 15 # the return link bandwidth in Mbit/s
+      delay: 550 # the delay of the satellite system in ms, it represents the altitude LEO, MEO or GEO
+      jitter: 50 # the variation delay of the satellite system in ms
+      acm: false # activate or not the ACM mechanism
+      slices: # list each slice of the simulation with their parameters which will use this NTN Link
+        - start: 0 # Specify the start time of the traffic for this slice
+          end: 60 # Specify the duration time of the traffic for this slice
+          theta: # specify the theta parameter for the interface between the mobile and NTN networks
+            lambda: 550 # the targeted latency in ms
+            delta: 50 # the acceptable jigue in ms
+            mu: 15 # the upload throughput in Mbit/s
+            beta: 40 # the download throughput in Mbit/s
+            sigma: false # the resource sharing between the NTN links
+          applications: # define the application which will be used by the slice: voip, web (for web browsing), streaming (for video streaming)
+            - name: streaming
+              data_rate: 4
