@@ -686,9 +686,8 @@ class SMF(Service):
                         "dns":
                         {
                             "ipv4": "8.8.8.8",
-                            "ipv6": "2001:4860:4860::8888"
                         },
-                        "ueSubnet": str(s.ue_network)
+                        # "ueSubnet": str(s.ue_network)
                     }
                 ]
             }
@@ -714,9 +713,9 @@ class SMF(Service):
                             {
                                 "dnn": slices[j].data_network,
                                 # Should be here if new version of free5gc
-                                # "pools": [
-                                #     {"cidr": str(slices[j].network.network)}
-                                # ]
+                                "pools": [
+                                    {"cidr": str(slices[j].ue_network)}
+                                ]
                             }
                         ]
                     }
@@ -1184,7 +1183,7 @@ class NTNQOF(Service):
         self.configuration['configuration']['sbi']['bindingIPv4'] = str(sbi)
         self.configuration['configuration']['NtnName'] = self.name.upper()
         self.configuration['configuration']['nrfUri'] = f"http://{nrf}:8000"
-        self.configuration['configuration']['slice_aware'] = False
+        self.configuration['configuration']['slice_aware'] = True
 
         self.configuration['configuration']['qos'] = {}
         for app in applications:
