@@ -426,6 +426,7 @@ class UPF(Service):
             f"{repository.results_folder}:/upf/results",
         ]
         compose.networks = self.networks
+        compose.ports = ["8805:8805/udp"]
         compose.cap_add = ["NET_ADMIN"]
         self.compose = compose
 
@@ -494,6 +495,7 @@ class AMF(Service):
         compose.networks = self.networks
         compose.cap_add = ["NET_ADMIN"]
         compose.depends_on = ["nrf"]
+        compose.ports = ["38412:38412/sctp"]
         self.compose = compose
 
     def configure_entrypoint(self, repository: Repository) -> None:
@@ -679,9 +681,8 @@ class SMF(Service):
                         "dns":
                         {
                             "ipv4": "8.8.8.8",
-                            "ipv6": "2001:4860:4860::8888"
                         },
-                        "ueSubnet": str(s.ue_network)
+                        # "ueSubnet": str(s.ue_network)
                     }
                 ]
             }
@@ -707,9 +708,9 @@ class SMF(Service):
                             {
                                 "dnn": slices[j].data_network,
                                 # Should be here if new version of free5gc
-                                # "pools": [
-                                #     {"cidr": str(slices[j].network.network)}
-                                # ]
+                                "pools": [
+                                    {"cidr": str(slices[j].ue_network)}
+                                ]
                             }
                         ]
                     }
@@ -750,6 +751,7 @@ class SMF(Service):
         ]
         compose.networks = self.networks
         compose.cap_add = ["NET_ADMIN"]
+        compose.ports = ["8805:8805/udp"]
         compose.depends_on = ["nrf"]
         self.compose = compose
 

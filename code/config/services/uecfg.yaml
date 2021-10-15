@@ -1,4 +1,4 @@
-# IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 or 16 digits)
+# IMSI number of the UE. IMSI = [MCC|MNC|MSISDN] (In total 15 digits)
 supi: 'imsi-208930000000003'
 # Mobile Country Code value of HPLMN
 mcc: '208'
@@ -22,6 +22,20 @@ imeiSv: '4370816125816151'
 gnbSearchList:
   - 127.0.0.1
 
+# UAC Access Identities Configuration
+uacAic:
+  mps: false
+  mcs: false
+
+# UAC Access Control Class
+uacAcc:
+  normalClass: 0
+  class11: false
+  class12: false
+  class13: false
+  class14: false
+  class15: false
+
 # Initial PDU sessions to be established
 sessions:
   - type: 'IPv4'
@@ -40,13 +54,13 @@ default-nssai:
   - sst: 1
     sd: 1
 
-# Supported encryption algorithms by this UE
+# Supported integrity algorithms by this UE
 integrity:
   IA1: true
   IA2: true
   IA3: true
 
-# Supported integrity algorithms by this UE
+# Supported encryption algorithms by this UE
 ciphering:
   EA1: true
   EA2: true

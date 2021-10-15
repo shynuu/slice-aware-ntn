@@ -202,6 +202,7 @@ class CService(object):
         self.build_context: str = None
         self.build_args: Dict[str, str] = None
         self.image: str = None
+        self.ports: List[str] = None
         self.entrypoint: str = None
         self.command: str = None
         self.expose: List[str] = None
@@ -231,6 +232,9 @@ class CService(object):
 
         if self.image != None:
             self.configuration['image'] = self.image
+
+        if self.ports != None:
+            self.configuration['ports'] = [port for port in self.ports]
 
         if self.entrypoint != None:
             self.configuration['entrypoint'] = self.entrypoint
