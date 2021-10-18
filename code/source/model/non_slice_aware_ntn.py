@@ -1183,7 +1183,7 @@ class NTNQOF(Service):
         self.configuration['configuration']['sbi']['bindingIPv4'] = str(sbi)
         self.configuration['configuration']['NtnName'] = self.name.upper()
         self.configuration['configuration']['nrfUri'] = f"http://{nrf}:8000"
-        self.configuration['configuration']['slice_aware'] = True
+        self.configuration['configuration']['slice_aware'] = False
 
         self.configuration['configuration']['qos'] = {}
         for app in applications:
