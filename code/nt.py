@@ -29,6 +29,7 @@ import os
 import sys
 import codecs
 from ruamel.yaml import YAML
+from source.daemon.daemon import Daemon
 from source.builder.builder import Builder
 from source.testbed import Selector
 from source.testbed.testbed import Testbed
@@ -78,6 +79,8 @@ if __name__ == "__main__":
     run_parser.add_argument("-i", "--iterations", help="Run the scenario multiple times",
                             type=int, default=1, metavar=('<iteration number>'), required=False)
     run_parser.add_argument("--pcap", help="Generate a .pcap file for the testbed", action="store_true",
+                            default=False, required=False)
+    run_parser.add_argument("--grafana", help="Launch a Grafana instance", action="store_true",
                             default=False, required=False)
 
     # Evaluate a specific scenario
@@ -173,6 +176,8 @@ if __name__ == "__main__":
                     r, cont, configuration_folder, conf, scenario_folder)
                 testbed.generate()
                 testbed.make_receipes_folders(receipes_folder, args.iterations)
+                if args.grafana:
+                    testbed.initialize_daemon(Daemon(testbed.scenario))
                 testbed.run(args.iterations, args.pcap)
             else:
                 logging.error(

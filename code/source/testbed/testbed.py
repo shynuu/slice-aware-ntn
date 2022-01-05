@@ -28,7 +28,10 @@ import logging
 import codecs
 import sys
 import _thread
+from typing import Tuple
 from ruamel import yaml
+
+from code.source.daemon.daemon import Daemon
 from ..utils.utils import start_pcap_capture, stop_pcap_capture
 from ..scenario import Scenario
 
@@ -40,6 +43,7 @@ class Testbed(object):
         self.scenario = scenario
         self.receipes = None
         self.results = None
+        self.daemon = None
 
     def generate(self):
         """Generate the testbed corresponding to the embedded scenario"""
@@ -53,6 +57,11 @@ class Testbed(object):
         self.scenario.write_entrypoint()
         self.scenario.write_compose()
 
+    def initialize_daemon(self, daemon):
+        """Initialize the daemon"""
+        self.daemon = daemon
+        self.daemon.initialize(self.results)
+
     def run(self, iteration: int, pcap: bool):
         """Run the embedded scenario on the testbed"""
         logging.info(
@@ -64,7 +73,8 @@ class Testbed(object):
                 _thread.start_new_thread(start_pcap_capture, (pth,))
             logging.info(
                 f"Running iteration {i} of scenario {self.scenario.name}")
-            result = self.scenario.run()
+            result = self.scenario.run() if self.daemon == None else self.scenario.run(
+                daemon=self.daemon)
             if result:
                 shutil.copytree(
                     self.results, f"{self.receipes}/iteration-{i}", dirs_exist_ok=True)
@@ -73,7 +83,7 @@ class Testbed(object):
             else:
                 stop_pcap_capture()
 
-    def make_receipes_folders(self, receipes_folder: str, iterations: int) -> None:
+    def make_receipes_folders(self, receipes_folder: str, iterations: int) -> str:
         """
         Create the receipes folders
         """
@@ -92,7 +102,7 @@ class Testbed(object):
 
         return receipes_path
 
-    def make_scenario_folders(self, name: str, scenario_folder: str) -> None:
+    def make_scenario_folders(self, name: str, scenario_folder: str) -> Tuple[str, str, str]:
         """
         Create the scenario folders
         """

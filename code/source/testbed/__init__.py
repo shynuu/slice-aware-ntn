@@ -26,12 +26,13 @@ from typing import Dict
 from ..scenario import Scenario
 from ..scenario.non_slice_aware_ntn import NonSliceAwareNTN
 from ..scenario.slice_aware_ntn import SliceAwareNTN
+from ..scenario.grafana import Grafana
 
 
 class Selector(object):
     """Scenario selector class"""
 
-    scenarios = [SliceAwareNTN, NonSliceAwareNTN]
+    scenarios = [SliceAwareNTN, NonSliceAwareNTN, Grafana]
 
     @classmethod
     def get_scenario(cls, definition: Dict, name: str) -> Scenario:

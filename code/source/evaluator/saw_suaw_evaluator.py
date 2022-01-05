@@ -329,7 +329,7 @@ class SSEvaluator(Evaluator):
             slices_probes: List[Slice] = [Slice(i, slices[i], aware)
                                           for i in range(n_slice)]
 
-            for k in range(len(slices)):
+            for k in range(n_slice):
                 for j in range(n_ue):
                     for app in slices[k].applications:
                         slices_probes[k].pdu.append(Parser.parse_application(

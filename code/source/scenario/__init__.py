@@ -169,7 +169,7 @@ class Scenario(object):
         with codecs.open(path, "w", encoding="utf-8") as compose_file:
             yam.dump(output,  compose_file)
 
-    def run(self) -> None:
+    def run(self, daemon=None) -> None:
         logging.info(f"[{self.name}] run function undefined, I QUIT !")
         sys.exit(1)
 
