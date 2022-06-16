@@ -8,8 +8,6 @@ function logerr() {
     echo -e "[ERRO] $1"
 }
 
-DOCKER_COMPOSE_VERSION='1.29.0'
-
 log "Update ubuntu"
 apt-get update
 
@@ -23,29 +21,32 @@ apt-get remove -qq \
     docker.io \
     containerd \
     runc
+
 apt-get install -qq \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - &>/dev/null
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
+
 apt-get update -qq
 apt-get install -qq \
     docker-ce \
     docker-ce-cli \
-    containerd.io
+    containerd.io \
+    docker-compose-plugin
+    
 groupadd docker | true
 systemctl enable docker
 
 log "Verify docker install"
 docker --version
-
-log "Install docker-compose version: $DOCKER_COMPOSE_VERSION"
-curl -sL "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
-    chmod +x /usr/local/bin/docker-compose &&
-    curl -L https://raw.githubusercontent.com/docker/compose/$DOCKER_COMPOSE_VERSION/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
 log "Verify docker-compose install"
 docker-compose --version
@@ -55,7 +56,7 @@ apt-get install -y python3-pip
 
 log "Install gtp5g kernel module"
 cd /tmp &&
-    git clone https://github.com/PrinzOwO/gtp5g.git &&
+    git clone https://github.com/free5gc/gtp5g &&
     cd gtp5g &&
     make clean &&
     make &&

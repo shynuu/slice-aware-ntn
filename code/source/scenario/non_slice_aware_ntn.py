@@ -324,11 +324,11 @@ class NonSliceAwareNTN(Scenario):
     def run(self) -> bool:
 
         def start_testbed(path: str) -> None:
-            cmd = f"docker-compose -f {path} up -d"
+            cmd = f"docker compose -f {path} up -d"
             subprocess.call(cmd, shell=True)
 
         def stop_testbed(path: str) -> None:
-            cmd = f"docker-compose -f {path} down -v"
+            cmd = f"docker compose -f {path} down -v"
             subprocess.call(cmd, shell=True)
 
         def wait_for_configuration(client, n) -> None:

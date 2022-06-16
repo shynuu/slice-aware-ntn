@@ -290,11 +290,11 @@ class Parser(object):
 
         dataset = None
         if application.code == APPLICATION_WEB:
-            dataset = cls.parse_web_application(lines[7::], duration)
+            dataset = cls.parse_web_application(lines[8::], duration)
         elif application.code == APPLICATION_STREAMING:
-            dataset = cls.parse_streaming_application(lines[7::], duration)
+            dataset = cls.parse_streaming_application(lines[8::], duration)
         else:
-            dataset = cls.parse_voip_application(lines[7::], duration)
+            dataset = cls.parse_voip_application(lines[8::], duration)
 
         dataset.application = application
         dataset.slice = slice_index

@@ -8,8 +8,6 @@ function logerr() {
     echo -e "[ERRO] $1"
 }
 
-DOCKER_COMPOSE_VERSION='1.29.0'
-
 log "Update ubuntu"
 apt-get update
 

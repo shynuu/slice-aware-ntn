@@ -462,7 +462,7 @@ class UPF(Service):
         ran_network = ipaddress.IPv4Interface(
             f"{gnb.networks.get('classifier-ran')}/24").network
         ep.add_line(f"ip route add {ran_network} via {classifier_ip}")
-        ep.add_line(f"free5gc-upfd -f upfcfg.yaml")
+        ep.add_line(f"free5gc-upfd -c upfcfg.yaml")
         self.entrypoint = ep
 
 
@@ -520,7 +520,7 @@ class AMF(Service):
         ran_network = ipaddress.IPv4Interface(
             f"{gnb.networks.get('classifier-ran')}/24").network
         ep.add_line(f"ip route add {ran_network} via {classifier_ip}")
-        ep.add_line(f"amf --amfcfg amfcfg.yaml")
+        ep.add_line(f"amf --config amfcfg.yaml")
         self.entrypoint = ep
 
 
@@ -567,7 +567,7 @@ class NSSF(Service):
         """Add a Compose configuration to the NSSF"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--nssfcfg nssfcfg.yaml"
+        compose.command = f"--config nssfcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/nssf/nssfcfg.yaml",
         ]
@@ -694,17 +694,17 @@ class SMF(Service):
             for s in slices
         ]
 
-        self.configuration["configuration"]["userplane_information"]["up_nodes"] = {
+        self.configuration["configuration"]["userplaneInformation"]["upNodes"] = {
         }
-        self.configuration["configuration"]["userplane_information"]["up_nodes"][gnb.name] = {
+        self.configuration["configuration"]["userplaneInformation"]["upNodes"][gnb.name] = {
             "type": "AN",
             "an_ip": str(gnb.networks.get("classifier-ran"))
         }
 
         for j in range(len(upfs)):
-            self.configuration["configuration"]["userplane_information"]["up_nodes"][upfs[j].name] = {
+            self.configuration["configuration"]["userplaneInformation"]["upNodes"][upfs[j].name] = {
                 "type": "UPF",
-                "node_id": str(upfs[j].networks.get("pfcp")),
+                "nodeID": str(upfs[j].networks.get("pfcp")),
                 "sNssaiUpfInfos":
                 [
                     {
@@ -732,7 +732,7 @@ class SMF(Service):
                 ]
             }
 
-        self.configuration["configuration"]["userplane_information"]["links"] = [
+        self.configuration["configuration"]["userplaneInformation"]["links"] = [
             {"A": gnb.name, "B": upf.name} for upf in upfs
         ]
 
@@ -749,7 +749,7 @@ class SMF(Service):
         """Add a Compose configuration to the SMF"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--smfcfg smfcfg.yaml --uerouting uerouting.yaml"
+        compose.command = f"--config smfcfg.yaml --uerouting uerouting.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/smf/smfcfg.yaml",
             f"{repository.output_configuration_folder}/uerouting.yaml:/smf/uerouting.yaml",
@@ -779,7 +779,7 @@ class AUSF(Service):
         """Add a Compose configuration to the AUSF"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--ausfcfg ausfcfg.yaml"
+        compose.command = f"--config ausfcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/ausf/ausfcfg.yaml",
         ]
@@ -808,7 +808,7 @@ class NRF(Service):
         """Add a Compose configuration to the NRF"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--nrfcfg nrfcfg.yaml"
+        compose.command = f"--config nrfcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/nrf/nrfcfg.yaml",
         ]
@@ -841,7 +841,7 @@ class PCF(Service):
         """Add a Compose configuration to the PCF"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--pcfcfg pcfcfg.yaml"
+        compose.command = f"--config pcfcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/pcf/pcfcfg.yaml",
         ]
@@ -871,7 +871,7 @@ class UDM(Service):
         """Add a Compose configuration to the UDM"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--udmcfg udmcfg.yaml"
+        compose.command = f"--config udmcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/udm/udmcfg.yaml",
         ]
@@ -903,7 +903,7 @@ class UDR(Service):
         """Add a Compose configuration to the UDR"""
 
         compose = CService.New(self.name, self.docker_image)
-        compose.command = f"--udrcfg udrcfg.yaml"
+        compose.command = f"--config udrcfg.yaml"
         compose.volumes = [
             f"{repository.output_configuration_folder}/{self.name}.yaml:/udr/udrcfg.yaml",
         ]
