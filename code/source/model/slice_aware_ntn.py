@@ -1316,7 +1316,7 @@ class QOF(Service):
 
 class MONGO(Service):
 
-    docker_image = "mongo"
+    docker_image = "mongo:4.4.14"
 
     def configure(self, repository: Repository) -> None:
         """Configure the MONGO service"""
