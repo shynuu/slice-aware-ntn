@@ -6,7 +6,7 @@ UDP buffer size: 212992 Byte (default)
 ------------------------------------------------------------
 [  1] local 172.16.2.4%uesimtun0 port 38039 connected with 172.16.3.13 port 5060 (reverse) (trip-times) (sock=3) (tos tx=0xb8) on 2022-06-26 23:34:57 (UTC)
 [ ID] Interval        Transfer     Bandwidth        Jitter   Lost/Total  Latency avg/min/max/stdev PPS  Rx/inP  NetPwr
-[ *1] 0.00-1.00 sec  16800 Bytes  134400 bits/sec   2.602 ms 1/13 (7.7%) 23.420/18.010/29.301/3.439 ms 14 pps 12/0(0) pkts 0.717348
+[ *1] 0.00-1.00 sec  16800 Bytes  134400 bits/sec   2.602 ms 0/13 (0%) 23.420/18.010/29.301/3.439 ms 14 pps 12/0(0) pkts 0.717348
 [ *1] 1.00-2.00 sec  15400 Bytes  123200 bits/sec   2.900 ms 0/11 (0%) 23.380/20.589/26.777/2.282 ms 12 pps 11/0(0) pkts 0.658688
 [ *1] 2.00-3.00 sec  16800 Bytes  134400 bits/sec   3.444 ms 0/12 (0%) 23.890/18.226/28.669/3.170 ms 11 pps 12/0(0) pkts 0.703216
 [ *1] 3.00-4.00 sec  15400 Bytes  123200 bits/sec   2.476 ms 0/11 (0%) 23.947/22.422/27.480/1.391 ms 11 pps 11/0(0) pkts 0.643094
@@ -246,4 +246,4 @@ UDP buffer size: 212992 Byte (default)
 [ *1] 237.00-238.00 sec  15400 Bytes  123200 bits/sec   4.079 ms 0/11 (0%) 24.125/16.332/28.070/3.617 ms 11 pps 11/0(0) pkts 0.638349
 [ *1] 238.00-239.00 sec  16800 Bytes  134400 bits/sec   3.969 ms 0/12 (0%) 23.332/18.524/28.005/3.266 ms 11 pps 12/0(0) pkts 0.720036
 [ *1] 239.00-240.00 sec  15400 Bytes  123200 bits/sec   3.818 ms 0/11 (0%) 24.476/20.349/32.471/3.566 ms 11 pps 11/0(0) pkts 0.629178
-[ *1] 0.00-240.13 sec  3843000 Bytes  128033 bits/sec   3.473 ms 1/2746 (0.036%) 23.737/11.307/33.859/3.064 ms 11 pps 2745/0(0) pkts 0.674216
+[ *1] 0.00-240.13 sec  3843000 Bytes  128033 bits/sec   3.473 ms 0/2746 (0%) 23.737/11.307/33.859/3.064 ms 11 pps 2745/0(0) pkts 0.674216

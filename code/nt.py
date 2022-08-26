@@ -91,6 +91,8 @@ if __name__ == "__main__":
         "--contribution", help="generate figure tikz code for a contribution (use tikzplotlib)", action="store_true", default=False)
     evaluate_parser.add_argument(
         "--plot", help="plot figures", action="store_true", default=False)
+    evaluate_parser.add_argument(
+        "--separate-plot", help="plot separate figures", action="store_true", default=False)
 
     args = parser.parse_args()
 
@@ -218,7 +220,7 @@ if __name__ == "__main__":
 
         evaluator = SSEvaluator(testbeds[0], testbeds[1])
         evaluator.init_folder(receipes_folder)
-        evaluator.evaluate(args.contribution, args.plot)
+        evaluator.evaluate(args.contribution, args.plot, args.separate_plot)
 
         sys.exit(0)
 

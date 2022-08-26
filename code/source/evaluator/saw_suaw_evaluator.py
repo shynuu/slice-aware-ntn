@@ -61,7 +61,7 @@ class Plot(object):
         colors = ["red", "blue", "orange", "green", "purple"]
 
         if savefig != False:
-            plt.figure(figsize=(2000*px, 1000*px))
+            plt.figure(figsize=(1000*px, 1000*px))
         else:
             plt.figure()
         for plot in plots:
@@ -370,7 +370,7 @@ class SSEvaluator(Evaluator):
 
         return tmp
 
-    def evaluate(self, contribution: bool, plot: bool) -> None:
+    def evaluate(self, contribution: bool, plot: bool, separate_plot: bool) -> None:
 
         sl_saw = self.parse_slices(self.t1, True)
         sl_suaw = self.parse_slices(self.t2, False)
@@ -491,82 +491,185 @@ class SSEvaluator(Evaluator):
             plt.close()
 
         ###########################
-        markers = [None, None, "*"]
-        i = 0
-        p = []
-        k = 0
-        for s in slices_non_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_throughput(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
-                i += 1
-        k += 1
-        i = 0
-        for s in slices_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_throughput(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
-                i += 1
-        Plot.plot_fig("Time (s)", "Throughput (Mbit/s)",
-                      "Throughput of each QFI", *p, savefig=f"{self.output_path}/throughput")
+        if separate_plot:
 
-        p = []
-        k = 0
-        i = 0
-        for s in slices_non_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_trip_time(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
-                i += 1
-        k += 1
-        i = 0
-        for s in slices_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_trip_time(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
-                i += 1
+            slices_non_sa.pop()
+            slices_sa.pop()
 
-        Plot.plot_fig("Time (s)", "Trip Time (ms)",
-                      "Packet Delay Budget of each QFI", *p, savefig=f"{self.output_path}/packet_delay_budget")
+            markers = [None, None, "*"]
+            i = 0
+            p = []
+            k = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_throughput(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+            Plot.plot_fig("Time (s)", "Throughput (Mbit/s)",
+                          "Throughput of each QFI - Slice Unaware", *p, savefig=f"{self.output_path}/throughput")
 
-        p = []
-        k = 0
-        i = 0
+            p = []
+            k = 0
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_throughput(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+            Plot.plot_fig("Time (s)", "Throughput (Mbit/s)",
+                          "Throughput of each QFI - Slice Aware", *p, savefig=f"{self.output_path}/throughput")
 
-        for s in slices_non_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_loss(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
-                i += 1
-        k += 1
-        i = 0
-        for s in slices_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_loss(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
-                i += 1
+            p = []
+            k = 0
+            i = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_trip_time(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
 
-        Plot.plot_fig("Time (s)", "Packet Error Rate (%)",
-                      "Packet Error Rate of each QFI", *p, savefig=f"{self.output_path}/packet_error_rate")
+            Plot.plot_fig("Time (s)", "Trip Time (ms)",
+                          "Packet Delay Budget of each QFI - Slice Unaware", *p, savefig=f"{self.output_path}/packet_delay_budget")
 
-        p = []
-        k = 0
-        i = 0
-        for s in slices_non_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_jitter(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
-                i += 1
-        k += 1
-        i = 0
-        for s in slices_sa:
-            for a in s.pdu:
-                p.append(Plot(x, a.get_jitter(),
-                              legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
-                i += 1
+            p = []
+            k = 0
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_trip_time(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
 
-        Plot.plot_fig("Time (s)", "Jitter (ms)",
-                      "Jitter of each QFI", *p, savefig=f"{self.output_path}/jitter")
+            Plot.plot_fig("Time (s)", "Trip Time (ms)",
+                          "Packet Delay Budget of each QFI - Slice Aware", *p, savefig=f"{self.output_path}/packet_delay_budget")
+
+            p = []
+            k = 0
+            i = 0
+
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_loss(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Packet Error Rate (%)",
+                          "Packet Error Rate of each QFI - Slice Unaware", *p, savefig=f"{self.output_path}/packet_error_rate")
+
+            p = []
+            k = 0
+            i = 0
+
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_loss(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Packet Error Rate (%)",
+                          "Packet Error Rate of each QFI - Slice Aware", *p, savefig=f"{self.output_path}/packet_error_rate")
+
+            p = []
+            k = 0
+            i = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_jitter(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Jitter (ms)",
+                          "Jitter of each QFI - Slice Unaware", *p, savefig=f"{self.output_path}/jitter")
+
+            p = []
+            k = 0
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_jitter(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Jitter (ms)",
+                          "Jitter of each QFI - Slice Aware", *p, savefig=f"{self.output_path}/jitter")
+
+        else:
+            markers = [None, None, "*"]
+            i = 0
+            p = []
+            k = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_throughput(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
+                    i += 1
+            k += 1
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_throughput(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+            Plot.plot_fig("Time (s)", "Throughput (Mbit/s)",
+                          "Throughput of each QFI", *p, savefig=f"{self.output_path}/throughput")
+
+            p = []
+            k = 0
+            i = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_trip_time(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
+                    i += 1
+            k += 1
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_trip_time(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Trip Time (ms)",
+                          "Packet Delay Budget of each QFI", *p, savefig=f"{self.output_path}/packet_delay_budget")
+
+            p = []
+            k = 0
+            i = 0
+
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_loss(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
+                    i += 1
+            k += 1
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_loss(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Packet Error Rate (%)",
+                          "Packet Error Rate of each QFI", *p, savefig=f"{self.output_path}/packet_error_rate")
+
+            p = []
+            k = 0
+            i = 0
+            for s in slices_non_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_jitter(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)], linestyle="dashed"))
+                    i += 1
+            k += 1
+            i = 0
+            for s in slices_sa:
+                for a in s.pdu:
+                    p.append(Plot(x, a.get_jitter(),
+                                  legend=a.legend, marker=markers[k], color=colors[i % len(colors)]))
+                    i += 1
+
+            Plot.plot_fig("Time (s)", "Jitter (ms)",
+                          "Jitter of each QFI", *p, savefig=f"{self.output_path}/jitter")
 
         if plot:
             plt.show()
