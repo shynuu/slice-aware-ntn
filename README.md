@@ -558,6 +558,31 @@ You can reach us at youssouf.drif@irt-saintexupery.com
 
 We would like to thank the free5gc team for their open-source 5G Core Network as well as UERANSIM team for their open-source software gNB and UE.
 
+## How to cite
+
+The paper have been published in IEEE LCN 2021 conference: https://ieeexplore.ieee.org/document/9524938
+
+**Bibtex**
+
+```
+@INPROCEEDINGS{9524938,
+  author={Drif, Youssouf and Lavinal, Emmanuel and Chaput, Emmanuel and Berthou, Pascal and Jou, Boris Tiomela and Grémillet, Olivier and Arnal, Fabrice},
+  booktitle={2021 IEEE 46th Conference on Local Computer Networks (LCN)}, 
+  title={Slice Aware Non Terrestrial Networks}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={24-31},
+  keywords={Satellites;5G mobile communication;Computer architecture;Quality of service;3GPP;Virtualization;Standards;5G;Non Terrestrial Network;Network Slicing;Software Defined Network (SDN);Network Function Virtualization (NFV)},
+  doi={10.1109/LCN52139.2021.9524938}}
+```
+
+**Plain**
+
+```
+Y. Drif et al., "Slice Aware Non Terrestrial Networks," 2021 IEEE 46th Conference on Local Computer Networks (LCN), Edmonton, AB, Canada, 2021, pp. 24-31, doi: 10.1109/LCN52139.2021.9524938. keywords: {Satellites;5G mobile communication;Computer architecture;Quality of service;3GPP;Virtualization;Standards;5G;Non Terrestrial Network;Network Slicing;Software Defined Network (SDN);Network Function Virtualization (NFV)},
+```
+
 ## License
 
 The code of this testbed is released under the [MIT license](LICENSE), you are free to fork, alter and contribute to the testbed. All python code is documented and any contribution is welcomed!
