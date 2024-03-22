@@ -2,6 +2,9 @@
 
 This repository contains all the tools to launch a testbed and experiment our integration method of NTN as slice-aware backhaul links in 5G networks.
 
+The paper have been published in IEEE LCN 2021 conference: https://ieeexplore.ieee.org/document/9524938
+
+
 ![satellite_transport_network](https://user-images.githubusercontent.com/41422704/121254098-2b37ba00-c8aa-11eb-91ba-537959db5d3b.png)
 
 **Abstract**
@@ -19,35 +22,38 @@ Lastly, we evaluate the performances of our method using the aforementioned test
 
 # Table of contents
 
-- [Requirements](#requirements)
-  - [Hardware](#hardware)
-  - [Software](#software)
-- [Run the Testbed](#run-the-testbed)
-  - [Objective](#objective)
-  - [Install dependencies](#install-dependencies)
-  - [Configure scenarios](#configure-scenarios)
-  - [Run scenarios](#run-scenarios)
-  - [Evaluate scenarios](#evaluate-scenarios)
-  - [Samples](#samples)
-  - [Custom scenarios](#custom-scenarios)
-    - [Scenario configuration](#scenario-configuration)
-    - [Run the scenarios](#run-the-scenarios)
-    - [Evaluate performances and plot results](#evaluate-performances-and-plot-results)
-- [Advanced testbed configuration](#advanced-testbed-configuration)
-  - [Testbed configuration file](#testbed-configuration-file)
-  - [Add docker containers](#add-docker-containers)
-  - [Define services](#define-services)
-  - [Create scenario files](#create-scenario-files)
-  - [Add the scenario to the testbed](#add-the-scenario-to-the-testbed)
-  - [Add the evaluator for the scenario](#add-the-evaluator-for-the-scenario)
-  - [Configure and run the scenario](#configure-and-run-the-scenario)
-- [Helpers](#helpers)
-  - [Vagrant](#vagrant)
-  - [Bare-metal scripts](#bare-metal-scripts)
-- [Components used](#components-used)
-- [Authors](#authors)
-- [Acknownledgments](#acknownledgments)
-- [License](#license)
+- [Slice Aware Non Terrestrial Networks](#slice-aware-non-terrestrial-networks)
+- [Table of contents](#table-of-contents)
+  - [Requirements](#requirements)
+    - [Hardware](#hardware)
+    - [Software](#software)
+  - [Run the Testbed](#run-the-testbed)
+    - [Objective](#objective)
+    - [Install dependencies](#install-dependencies)
+    - [Configure scenarios](#configure-scenarios)
+    - [Run scenarios](#run-scenarios)
+    - [Evaluate scenarios](#evaluate-scenarios)
+    - [Samples](#samples)
+    - [Custom scenarios](#custom-scenarios)
+      - [Scenario configuration](#scenario-configuration)
+      - [Run the scenarios](#run-the-scenarios)
+      - [Evaluate performances and plot results](#evaluate-performances-and-plot-results)
+  - [Advanced testbed configuration](#advanced-testbed-configuration)
+    - [Testbed configuration file](#testbed-configuration-file)
+    - [Add docker containers](#add-docker-containers)
+    - [Define services](#define-services)
+    - [Create scenario files](#create-scenario-files)
+    - [Add the scenario to the testbed](#add-the-scenario-to-the-testbed)
+    - [Add the evaluator for the scenario](#add-the-evaluator-for-the-scenario)
+    - [Configure and run the scenario](#configure-and-run-the-scenario)
+  - [Helpers](#helpers)
+    - [Vagrant](#vagrant)
+    - [Bare-metal scripts](#bare-metal-scripts)
+  - [Components used](#components-used)
+  - [Authors](#authors)
+  - [Acknownledgments](#acknownledgments)
+  - [How to cite](#how-to-cite)
+  - [License](#license)
 
 ## Requirements
 
@@ -559,8 +565,6 @@ You can reach us at youssouf.drif@irt-saintexupery.com
 We would like to thank the free5gc team for their open-source 5G Core Network as well as UERANSIM team for their open-source software gNB and UE.
 
 ## How to cite
-
-The paper have been published in IEEE LCN 2021 conference: https://ieeexplore.ieee.org/document/9524938
 
 **Bibtex**
 
